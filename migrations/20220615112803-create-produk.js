@@ -13,7 +13,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       gambar: {
-        type: Sequelize.STRING
+        type: Sequelize.ARRAY(Sequelize.STRING)
       },
       harga: {
         type: Sequelize.STRING

@@ -37,12 +37,15 @@ const getProdukById = async (req, res) => {
 const createProduk = async (req, res) => {
     console.log(req.files);
     const { nama_produk, harga, deskripsi, kategoriId } = req.body
+    const arrOfGambar = [
+        req.files[0].path,
+        req.files[1].path,
+        req.files[2].path,
+        req.files[3].path
+    ]
     const produkData = {
         nama_produk: nama_produk,
-        gambar1: req.files[0].path,
-        gambar2: req.files[1].path,
-        // gambar3: req.files[2].path,
-        // gambar4: req.files[3].path,
+        gambar: arrOfGambar,
         harga: harga,
         deskripsi: deskripsi,
         kategoriId: kategoriId
@@ -52,12 +55,7 @@ const createProduk = async (req, res) => {
         status: 'Success',
         data: {
             nama_produk: produkData.nama_produk,
-            gambar: [
-                produkData.gambar1,
-                produkData.gambar2,
-                produkData.gambar3,
-                produkData.gambar4,
-            ],
+            gambar: produkData.gambar,
             harga: produkData.harga,
             deskripsi: produkData.deskripsi,
             kategoriId: produkData.kategoriId
