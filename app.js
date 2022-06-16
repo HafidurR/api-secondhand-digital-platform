@@ -16,6 +16,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/users', usersRouter);
-app.use('/category', categoryRouter);
+app.use('/categories', categoryRouter);
 
 module.exports = app;
