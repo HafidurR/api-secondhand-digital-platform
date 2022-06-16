@@ -9,6 +9,7 @@ const register = async (req, res) => {
         nama: nama,
         password: password
     }
+    
     const kirimEmail = await sendEmail(userData.email, userData.nama)
     const tambahUser = await User.create(userData)
         res.status(201).json({
