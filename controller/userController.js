@@ -5,18 +5,6 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
 const register = async (req, res) => {
-<<<<<<< HEAD
-    const { email, nama, password } = req.body
-    const userData = {
-        email: email,
-        nama: nama,
-        password: password
-    }
-    
-    const kirimEmail = await sendEmail(userData.email, userData.nama)
-    const tambahUser = await User.create(userData)
-        res.status(201).json({
-=======
     try {
         const { email, nama, password } = req.body
         const userData = {
@@ -27,7 +15,6 @@ const register = async (req, res) => {
         const tambahUser = await User.create(userData)
         const kirimEmail = await sendEmail(userData.email, userData.nama)
         return res.status(201).json({
->>>>>>> 21a59ddafa8ba264262cc90a35b78652cf711c20
             status: 'Success',
             data: {
                 nama: userData.nama
