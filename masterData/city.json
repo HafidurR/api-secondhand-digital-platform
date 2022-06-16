@@ -1,0 +1,2447 @@
+[
+    {
+        "nama_kota": "MANOKWARI SELATAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "PEGUNUNGAN ARFAK",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "SORONG",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "TAMBRAUW",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "MANOKWARI",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "RAJA AMPAT",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "MAYBRAT",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "TELUK WONDAMA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "TELUK BINTUNI",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KAIMANA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "FAK FAK",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "SORONG SELATAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BANTUL",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KULON PROGO",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "GUNUNG KIDUL",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "SLEMAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "YOGYAKARTA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "TULUNGAGUNG",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "MOJOKERTO",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "TUBAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "PASURUAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "SURABAYA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "JEMBER",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "LAMONGAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "PAMEKASAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BANYUWANGI",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "TRENGGALEK",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "NGAWI",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BOJONEGORO",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BLITAR",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "JOMBANG",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "SAMPANG",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "MALANG",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BATU",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "PONOROGO",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "MADIUN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "LUMAJANG",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "SITUBONDO",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "SUMENEP",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KEDIRI",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BONDOWOSO",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BANGKALAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "PROBOLINGGO",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "GRESIK",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "PACITAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "NGANJUK",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "MAGETAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "SIDOARJO",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KAPUAS HULU",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BENGKAYANG",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KETAPANG",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "SANGGAU",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "SINGKAWANG",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "MELAWI",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "MEMPAWAH",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "SAMBAS",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "SEKADAU",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "SINTANG",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KUBU RAYA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "LANDAK",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KOTA PONTIANAK",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KAYONG UTARA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BATANG HARI",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KERINCI",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "MUARO JAMBI",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "SUNGAI PENUH",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "SAROLANGUN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "TANJUNG JABUNG BARAT",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "TEBO",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BUNGO",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "MERANGIN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "JAMBI",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "TANJUNG JABUNG TIMUR",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "INTAN JAYA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "PUNCAK JAYA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "MIMIKA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "WAROPEN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KEPULAUAN YAPEN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KEEROM",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "SARMI",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "MAMBERAMO RAYA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "NDUGA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "JAYAPURA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "NABIRE",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BIAK NUMFOR",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "DEIYAI",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "JAYAWIJAYA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "MERAUKE",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "PANIAI",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "PEGUNUNGAN BINTANG",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "MAPPI",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "LANNY JAYA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "SUPIORI",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "YALIMO",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "PUNCAK",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BOVEN DIGOEL",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "ASMAT",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "DOGIYAI",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "MAMBERAMO TENGAH",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "TOLIKARA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "YAHUKIMO",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "ROKAN HILIR",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "PELALAWAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "INDRAGIRI HILIR",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KUANTAN SINGINGI",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "SIAK",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BENGKALIS",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "INDRAGIRI HULU",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KAMPAR",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KOTA PEKANBARU",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "ROKAN HULU",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "MERANTI",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KOTA DUMAI",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "PAHUWATO",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BONE BOLANGO",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "GORONTALO UTARA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BOALEMO",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "GORONTALO",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "LAMPUNG TIMUR",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "MESUJI",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "PRINGSEWU",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "METRO",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "TULANG BAWANG",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "WAY KANAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "TULANG BAWANG BARAT",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BANDAR LAMPUNG",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "LAMPUNG SELATAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "LAMPUNG BARAT",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "LAMPUNG TENGAH",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "LAMPUNG UTARA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "PESISIR BARAT",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "TANGGAMUS",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "PESAWARAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "MURUNG RAYA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BARITO UTARA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KOTAWARINGIN BARAT",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BARITO TIMUR",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KOTAWARINGIN TIMUR",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BARITO SELATAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KAPUAS",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "LAMANDAU",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "PULANG PISAU",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "GUNUNG MAS",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KATINGAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KOTA PALANGKARAYA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "SUKAMARA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "SERUYAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BULUNGAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "TANA TIDUNG",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KOTA TARAKAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "MALINAU",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "NUNUKAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BANGGAI",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "TOLI TOLI",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BANGGAI LAUT",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "DONGGALA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "PARIGI MOUTONG",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BUOL",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "MOROWALI",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "MOROWALI UTARA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BANGGAI KEPULAUAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "TOJO UNA UNA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "POSO",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "SIGI",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "PALU",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "PANGKAJENE KEPULAUAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KEPULAUAN SELAYAR",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "SOPPENG",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "LUWU",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "SIDENRENG RAPPANG",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "LUWU TIMUR",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "WAJO",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "PINRANG",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "PALOPO",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "TAKALAR",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "TORAJA UTARA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BULUKUMBA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "SINJAI",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "JENEPONTO",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "GOWA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "PARE PARE",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "TANA TORAJA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BARRU",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "LUWU UTARA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "ENREKANG",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BANTAENG",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "MAROS",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BONE",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "MAKASSAR",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "MALUKU TENGAH",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "SERAM BAGIAN BARAT",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "MALUKU TENGGARA BARAT",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KEPULAUAN ARU",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BURU SELATAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "AMBON",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "MALUKU BARAT DAYA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BURU",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "MALUKU TENGGARA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "TUAL",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "SERAM BAGIAN TIMUR",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "GAYO LUES",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "ACEH BARAT DAYA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "ACEH JAYA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BANDA ACEH",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "ACEH UTARA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "ACEH TIMUR",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "ACEH SELATAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "PIDIE JAYA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "ACEH SINGKIL",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "ACEH TAMIANG",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "PIDIE",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "SABANG",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "ACEH TENGAH",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "SIMEULUE",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "LANGSA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "LHOKSEUMAWE",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BIREUEN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "ACEH BARAT",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "ACEH BESAR",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "SUBULUSSALAM",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "NAGAN RAYA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BENER MERIAH",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "ACEH TENGGARA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BANYUASIN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "OGAN ILIR",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "PRABUMULIH",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "EMPAT LAWANG",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "LAHAT",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "MUARA ENIM",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "MUSI RAWAS",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "OGAN KOMERING ULU",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "PENUKAL ABAB LEMATANG ILIR",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "LUBUKLINGGAU",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "OGAN KOMERING ULU SELATAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "MUSI BANYUASIN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "OGAN KOMERING ILIR",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "PALEMBANG",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "PAGAR ALAM",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "OGAN KOMERING ULU TIMUR",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "LOMBOK TIMUR",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "LOMBOK BARAT",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "DOMPU",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BIMA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KOTA MATARAM",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "SUMBAWA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "LOMBOK UTARA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "LOMBOK TENGAH",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KOTA BIMA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "SUMBAWA BARAT",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "SIMALUNGUN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "TAPANULI SELATAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "TEBING TINGGI",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "MEDAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BATU BARA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "LABUHAN BATU SELATAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "DELI SERDANG",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "NIAS",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "TAPANULI TENGAH",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "PADANG LAWAS UTARA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "HUMBANG HASUNDUTAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "PEMATANGSIANTAR",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "TAPANULI UTARA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "NIAS UTARA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "ASAHAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "SIBOLGA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "SERDANG BEDAGAI",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "PAKPAK BHARAT",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "LANGKAT",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "MANDAILING NATAL",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BINJAI",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "TOBA SAMOSIR",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "NIAS BARAT",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "NIAS SELATAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "PADANG SIDEMPUAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "PADANG LAWAS",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "GUNUNGSITOLI",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "LABUHAN BATU",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KARO",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "LABUHAN BATU UTARA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "TANJUNG BALAI",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "SAMOSIR",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "DAIRI",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "MAMUJU UTARA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "MAMUJU TENGAH",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "POLEWALI MANDAR",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "MAMUJU",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "MAMASA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "MAJENE",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "JEMBRANA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BULELENG",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KARANGASEM",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KOTA DENPASAR",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "TABANAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BADUNG",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KLUNGKUNG",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BANGLI",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "GIANYAR",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KUTAI TIMUR",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KOTA BONTANG",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BERAU",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "PENAJAM PASIR UTARA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KOTA BALIKPAPAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "PASER",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KOTA SAMARINDA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KUTAI BARAT",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "MAHAKAM ULU",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KUTAI KARTANEGARA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "SUMBA TIMUR",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KOTA KUPANG",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "MALAKA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "MANGGARAI",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "SABU RAIJUA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "MANGGARAI TIMUR",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "NGADA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "SUMA BARAT DAYA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "ENDE",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "SUMBA BARAT",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "FLORES TIMUR",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "ROTE NDAO",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "ALOR",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "TIMOR TENGAH UTARA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "TIMOR TENGAH SELATAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BELU",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "LEMBATA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "MANGGARAI BARAT",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "SIKKA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "SUMBA TENGAH",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KUPANG",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "NAGEKEO",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "TANAH LAUT",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BARITO KUALA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "TABALONG",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "TANAH BUMBU",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BALANGAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KOTA BANJARBARU",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BANJAR",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KOTA BANJARMASIN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "TAPIN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "HULU SUNGAI SELATAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "HULU SUNGAI TENGAH",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "HULU SUNGAI UTARA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KOTABARU",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "PATI",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "DEMAK",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "GROBOGAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KEBUMEN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BANJARNEGARA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "WONOGIRI",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "CILACAP",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KENDAL",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BREBES",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "PURBALINGGA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "SEMARANG",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BOYOLALI",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "TEGAL",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "JEPARA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "SURAKARTA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "PURWOREJO",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "MAGELANG",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "SRAGEN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "REMBANG",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "WONOSOBO",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KUDUS",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "SALATIGA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BLORA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "SUKOHARJO",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KLATEN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "PEKALONGAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KARANGANYAR",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "TEMANGGUNG",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BANYUMAS",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BATANG",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "PEMALANG",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KAUR",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BENGKULU TENGAH",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BENGKULU UTARA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "LEBONG",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "REJANG LEBONG",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BENGKULU SELATAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "SELUMA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "MUKOMUKO",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KEPAHIANG",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BENGKULU",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KONAWE SELATAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KOLAKA UTARA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BUTON",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BUTON TENGAH",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BAU BAU",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "WAKATOBI",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BUTON UTARA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KOLAKA TIMUR",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BUTON SELATAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BOMBANA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KENDARI",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KONAWE UTARA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KONAWE KEPULAUAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KOLAKA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KONAWE",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "MUNA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "JAKARTA SELATAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "JAKARTA TIMUR",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KEPULAUAN SERIBU",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "JAKARTA UTARA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "JAKARTA BARAT",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "JAKARTA PUSAT",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BELITUNG",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BANGKA SELATAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BANGKA TENGAH",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BANGKA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BANGKA BARAT",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BELITUNG TIMUR",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KOTA PANGKAL PINANG",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BEKASI",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BANDUNG BARAT",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "CIAMIS",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "SUKABUMI",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KUNINGAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "CIMAHI",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "PURWAKARTA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BANDUNG",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "GARUT",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "INDRAMAYU",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "SUMEDANG",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BANJAR",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "DEPOK",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "SUBANG",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "MAJALENGKA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BOGOR",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "PANGANDARAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "CIANJUR",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "TASIKMALAYA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "CIREBON",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KARAWANG",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "CILEGON",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "PANDEGLANG",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "TANGERANG",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "LEBAK",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "SERANG",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "TANGERANG SELATAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "HALMAHERA TIMUR",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KEPULAUAN SULA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "HALMAHERA TENGAH",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "TERNATE",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "PULAU MOROTAI",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "HALMAHERA SELATAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "TIDORE KEPULAUAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "HALMAHERA BARAT",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "HALMAHERA UTARA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KEPULAUAN MENTAWAI",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "PASAMAN  ",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "SOLOK  ",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KOTA PARIAMAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KOTA PADANGPANJANG",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "DHARMASRAYA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "AGAM",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "PADANGPANJANG",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "LIMA PULUH KOTA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "PADANG PARIAMAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KOTA BUKITTINGGI",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KOTA SOLOK",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KOTA SAWAHLUNTO",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "SOLOK SELATAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KOTA PADANG",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KOTA PAYAKUMBUH",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "PASAMAN BARAT",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "SIJUNJUNG",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "PESISIR SELATAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "TANAH DATAR",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "NATUNA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KOTA TANJUNG PINANG",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BINTAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KOTA BATAM",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "LINGGA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KARIMUN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KEPULAUAN ANAMBAS",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "MINAHASA TENGGARA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KEPULAUAN SIAU TAGULANDANG BIARO",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "MINAHASA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "MINAHASA SELATAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BOLAANG MONGONDOW TIMUR",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BOLAANG MONGONDOW",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BITUNG",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BOLAANG MONGONDOW SELATAN",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KEPULAUAN SANGIHE",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KEPULAUAN TALAUD",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "BOLAANG MONGONDOW UTARA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "MINAHASA UTARA",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "TOMOHON",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    },
+    {
+        "nama_kota": "KOTAMOBAGU",
+        "createdAt": "2019-06-01 00:00:00+07",
+        "updatedAt": "2019-06-01 00:00:00+07"
+    }
+]
