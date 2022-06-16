@@ -1,6 +1,8 @@
 const {User} = require('../models');
 const model = require('../models');
 const {sendEmail} = require('../misc/mailer')
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
 const register = async (req, res) => {
     try {
@@ -32,4 +34,39 @@ const register = async (req, res) => {
     }
 }
 
-module.exports = {register}
+const login = async (req, res) => {
+    try {
+        const { email, password } = req.body;
+        const foundUser = await User.findOne({
+          where: {
+            email: email
+          }
+        });
+        const isValidPassword = bcrypt.compareSync(password, foundUser.password);
+        console.log(isValidPassword)
+        if (isValidPassword) {
+          const payload = {
+            id: foundUser.id,
+            name: foundUser.name,
+            email: foundUser.email
+          };
+          const token = jwt.sign(payload, process.env.JWT_SECRET_KEY, { expiresIn: '1h' });
+          return res.status(200).json({
+            token: token
+          });
+        }
+
+    } catch (error) {
+        return res.status(400).json({
+          status: 'Failed',
+          message: 'Wrong email or password'
+        });
+
+    }
+  
+}
+
+module.exports = {
+    register,
+    login
+}
