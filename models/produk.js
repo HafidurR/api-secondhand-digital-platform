@@ -23,6 +23,11 @@ module.exports = (sequelize, DataTypes) => {
       this.belongsTo(models.Kategori, {
         foreignKey: 'kategoriId'
       })
+      this.hasMany(models.notifikasi, {
+        foreignKey: 'produkId',
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE'
+      })
     }
   };
   Produk.init({
