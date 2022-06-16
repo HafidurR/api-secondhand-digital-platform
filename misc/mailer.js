@@ -4,7 +4,7 @@ const {PASSWORD} = process.env;
 
 const sendEmail = (email, nama) => {
     const mailOptions = {
-        from: 'fakhrizaluciha@gmail.com',
+        from: '18081010154@student.upnjatim.ac.id',
         to: email,
         subject: 'Welcome!',
         html: emailMessage(nama)
@@ -13,7 +13,7 @@ const sendEmail = (email, nama) => {
         host: 'smtp-relay.sendinblue.com',
         port: 587,
         auth: {
-            user: 'fakhrizaluciha@gmail.com',
+            user: '18081010154@student.upnjatim.ac.id',
             pass: PASSWORD
         }
     });
