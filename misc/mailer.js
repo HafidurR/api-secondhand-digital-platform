@@ -9,6 +9,7 @@ const sendEmail = (email, nama) => {
         subject: 'Welcome!',
         html: emailMessage(nama)
     }
+    
     const transporter = nodemailer.createTransport({
         host: 'smtp-relay.sendinblue.com',
         port: 587,
