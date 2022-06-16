@@ -18,13 +18,11 @@ module.exports = {
     "port": 5433
   },
   "production": {
-    "username": "uzyeycnyhojdcu",
-    "password": "ae28d2f3e5ab304108604cc309f02f8b00f3d4dbb56c4f34bff44aad6539bf4e",
-    "database": "d3qk33cofb62d1",
-    "host": "ec2-52-72-56-59.compute-1.amazonaws.com",
-    "url": "postgres://uzyeycnyhojdcu:ae28d2f3e5ab304108604cc309f02f8b00f3d4dbb56c4f34bff44aad6539bf4e@ec2-52-72-56-59.compute-1.amazonaws.com:5432/d3qk33cofb62d1",
+    "username": "bgerjcgagnpdrc",
+    "password": "21f67079e2098ec966c4c1d855f81bfd0b6227abd52c608776fc0cb530b43a0c",
+    "database": "dni7qu1q0gtd3",
+    "host": "ec2-3-229-11-55.compute-1.amazonaws.com",
     "dialect": "postgres",
-    "port": 5432,
     "dialectOptions": {
       ssl: {
         require: true,
