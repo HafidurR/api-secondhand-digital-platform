@@ -1,28 +1,20 @@
 'use strict';
-
 module.exports = {
-  up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('Produks', {
+  async up(queryInterface, Sequelize) {
+    await queryInterface.createTable('notifikasis', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      nama_produk: {
+      harga_tawar: {
         type: Sequelize.STRING
       },
-      gambar: {
-        type: Sequelize.ARRAY(Sequelize.STRING)
+      produkId: {
+        type: Sequelize.INTEGER
       },
-      harga: {
-        type: Sequelize.STRING,
-        defaultValue: 'Rp 0'
-      },
-      deskripsi: {
-        type: Sequelize.TEXT
-      },
-      kategoriId: {
+      userId: {
         type: Sequelize.INTEGER
       },
       createdAt: {
@@ -35,7 +27,7 @@ module.exports = {
       }
     });
   },
-  down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('Produks');
+  async down(queryInterface, Sequelize) {
+    await queryInterface.dropTable('notifikasis');
   }
 };
