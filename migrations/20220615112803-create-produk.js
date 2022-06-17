@@ -16,7 +16,8 @@ module.exports = {
         type: Sequelize.ARRAY(Sequelize.STRING)
       },
       harga: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        defaultValue: 'Rp 0'
       },
       deskripsi: {
         type: Sequelize.TEXT

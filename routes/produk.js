@@ -3,10 +3,11 @@ const router = express.Router();
 const produkRoute = require('../controller/produkController')
 const uploadImage = require('../misc/multerImage')
 
-router.get('/getAll', produkRoute.getAllProduk)
-router.get('/getProduk/:id', produkRoute.getProdukById)
-router.post('/createProduk', uploadImage.array('gambar', 4), produkRoute.createProduk)
-router.put('/updateProduk/:id', produkRoute.updateProduk)
-router.delete('/deleteProduk/:id', produkRoute.deleteProduk)
+router.get('/getByNama', produkRoute.getProdukByNamaProduk)
+router.get('/', produkRoute.getAllProduk)
+router.get('/:kategoriId', produkRoute.getProdukByKategori)
+router.post('/', uploadImage.array('gambar', 4), produkRoute.createProduk)
+router.put('/:id', uploadImage.array('gambar', 4), produkRoute.updateProduk)
+router.delete('/:id', produkRoute.deleteProduk)
 
 module.exports = router;
