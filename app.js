@@ -7,6 +7,7 @@ const PORT = 4000
 
 const usersRouter = require('./routes/users');
 const categoryRouter = require('./routes/category.routes');
+const produkRouter = require('./routes/produk')
 
 const app = express();
 
