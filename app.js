@@ -4,6 +4,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const PORT = 4000
+const cors = require('cors')
 
 const usersRouter = require('./routes/users');
 const categoryRouter = require('./routes/category.routes');
@@ -11,6 +12,7 @@ const produkRouter = require('./routes/produk')
 
 const app = express();
 
+app.use(cors())
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
