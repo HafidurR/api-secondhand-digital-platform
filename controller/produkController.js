@@ -65,12 +65,10 @@ const getProdukByKategori = async (req, res) => {
 
 const createProduk = async (req, res) => {
     const { nama_produk, harga, deskripsi, kategoriId } = req.body
-    const arrOfGambar = [
-        req.files[0].path,
-        req.files[1].path,
-        req.files[2].path,
-        req.files[3].path
-    ]
+    const arrOfGambar = []
+    req.files.forEach(element => {
+        arrOfGambar.push(element.path)
+    });
     const produkData = {
         nama_produk: nama_produk,
         gambar: arrOfGambar,
@@ -100,12 +98,10 @@ const createProduk = async (req, res) => {
 const updateProduk = async (req, res) => {
     const {id} = req.params
     const {nama_produk, harga, deskripsi, kategoriId} = req.body
-    const arrOfGambar = [
-        req.files[0].path,
-        req.files[1].path,
-        req.files[2].path,
-        req.files[3].path
-    ]
+    const arrOfGambar = []
+    req.files.forEach(element => {
+        arrOfGambar.push(element.path)
+    })
     const cariProduk = await Produk.findOne({
         where: {
             id
