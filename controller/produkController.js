@@ -1,10 +1,15 @@
 const {Produk} = require('../models');
+const model = require('../models')
 
 const getAllProduk = async (req, res) => {
     let { page, row } = req.query
     page -= 1
     const options = {
-        attributes: ['id', 'nama_produk', 'gambar', 'harga', 'deskripsi', 'kategoriId']
+        attributes: ['id', 'nama_produk', 'gambar', 'harga', 'deskripsi', 'kategoriId'],
+        include: [{
+            model: model.User,
+            attributes: ['nama', 'kotaId']
+        }]
     };
     if (page) options.offset = page;
     if (row) options.offset = row;
@@ -20,6 +25,10 @@ const getProdukByNamaProduk = async (req, res) => {
     page -= 1
     const options = {
         attributes: ['id', 'nama_produk', 'gambar', 'harga', 'deskripsi', 'kategoriId'],
+        include: [{
+            model: model.User,
+            attributes: ['nama', 'kotaId']
+        }],
         where: {
             nama_produk: nama_produk
         }
@@ -45,6 +54,10 @@ const getProdukByKategori = async (req, res) => {
     const kategoriId = req.params.kategoriId
     const options = {
         attributes: ['id', 'nama_produk', 'gambar', 'harga', 'deskripsi', 'kategoriId'],
+        include: [{
+            model: model.User,
+            attributes: ['nama', 'kotaId']
+        }],
         where: {
             kategoriId
         }
