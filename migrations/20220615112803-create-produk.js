@@ -22,6 +22,9 @@ module.exports = {
       deskripsi: {
         type: Sequelize.TEXT
       },
+      userId: {
+        type: Sequelize.INTEGER
+      },
       kategoriId: {
         type: Sequelize.INTEGER
       },

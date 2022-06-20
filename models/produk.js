@@ -28,6 +28,9 @@ module.exports = (sequelize, DataTypes) => {
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE'
       })
+      this.belongsTo(models.User, {
+        foreignKey: 'userId'
+      })
     }
   };
   Produk.init({
@@ -35,6 +38,7 @@ module.exports = (sequelize, DataTypes) => {
     gambar: DataTypes.ARRAY(DataTypes.STRING),
     harga: DataTypes.STRING,
     deskripsi: DataTypes.TEXT,
+    userId: DataTypes.INTEGER,
     kategoriId: DataTypes.INTEGER
   }, {
     sequelize,

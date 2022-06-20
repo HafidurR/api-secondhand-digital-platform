@@ -78,6 +78,7 @@ const getProdukByKategori = async (req, res) => {
 
 const createProduk = async (req, res) => {
     const { nama_produk, harga, deskripsi, kategoriId } = req.body
+    const foundUser = req.user.id
     const arrOfGambar = []
     req.files.forEach(element => {
         arrOfGambar.push(element.path)
@@ -87,7 +88,8 @@ const createProduk = async (req, res) => {
         gambar: arrOfGambar,
         harga: harga,
         deskripsi: deskripsi,
-        kategoriId: kategoriId
+        kategoriId: kategoriId,
+        userId: foundUser
     }
     const tambahProduk = await Produk.create(produkData)
     res.status(201).json({
@@ -97,7 +99,8 @@ const createProduk = async (req, res) => {
             gambar: produkData.gambar,
             harga: produkData.harga,
             deskripsi: produkData.deskripsi,
-            kategoriId: produkData.kategoriId
+            kategoriId: produkData.kategoriId,
+            user: produkData.userId
         }
     }) 
     if (!produkData) {
@@ -109,7 +112,7 @@ const createProduk = async (req, res) => {
 }
 
 const updateProduk = async (req, res) => {
-    const {id} = req.params
+    const {id} = req.params.id
     const {nama_produk, harga, deskripsi, kategoriId} = req.body
     const arrOfGambar = []
     req.files.forEach(element => {
