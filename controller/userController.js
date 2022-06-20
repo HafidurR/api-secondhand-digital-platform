@@ -110,7 +110,7 @@ const updateUser = async (req, res) => {
                 id: id
             }
         })
-            .then((rsl => {
+            .then(async (rsl) => {
                 if (rsl === null) {
                     return res.status(404).json({
                         status: 'error',
@@ -135,7 +135,7 @@ const updateUser = async (req, res) => {
                             })
                         })
                 }
-            }))
+            })
     } catch (error) {
         return res.status(500).json({
             status: 'Failed',
