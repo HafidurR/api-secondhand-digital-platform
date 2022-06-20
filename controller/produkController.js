@@ -1,4 +1,4 @@
-const {Produk} = require('../models');
+const { Produk } = require('../models');
 
 const getAllProduk = async (req, res) => {
     let { page, row } = req.query
