@@ -42,12 +42,19 @@ const login = async (req, res) => {
             }
         });
         const isValidPassword = bcrypt.compareSync(password, foundUser.password);
-        console.log(isValidPassword)
+        // console.log(isValidPassword)
         if (isValidPassword) {
+            // Check profile
+            const checkProfile = foundUser.toJSON()
+            let profile = 0;
+            for (const item in checkProfile) { 
+                if(checkProfile[item] === null) profile += 1
+            }
             const payload = {
                 id: foundUser.id,
                 name: foundUser.name,
-                email: foundUser.email
+                email: foundUser.email,
+                profile: profile
             };
             const token = jwt.sign(payload, process.env.JWT_SECRET_KEY, { expiresIn: '1h' });
             return res.status(200).json({
@@ -58,7 +65,7 @@ const login = async (req, res) => {
     } catch (error) {
         return res.status(400).json({
             status: 'Failed',
-            message: 'Wrong email or password'
+            message: "Wrong email or password"
         });
 
     }
