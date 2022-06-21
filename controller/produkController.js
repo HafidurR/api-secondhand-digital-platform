@@ -76,6 +76,29 @@ const getProdukByKategori = async (req, res) => {
     } 
 }
 
+const getProdukById = async (req, res) => {
+    const id = req.params.id
+    const options = {
+        attributes: ['id', 'nama_produk', 'gambar', 'harga', 'deskripsi', 'kategoriId'],
+        include: [{
+            model: model.User,
+            attributes: ['nama', 'kotaId']
+        }]
+    }
+    const cariProduk = await Produk.findByPk(id, options)
+    if (cariProduk) {
+        return res.status(200).json({
+            status: 'Success',
+            data: cariProduk
+        })
+    } else if (!cariProduk) {
+        return res.status(400).json({
+            status: 'Error',
+            message: `Produk dengan kategori ${req.params.kategoriId} tidak ditemukan`
+        })
+    } 
+}
+
 const createProduk = async (req, res) => {
     const { nama_produk, harga, deskripsi, kategoriId } = req.body
     const foundUser = req.user.id
@@ -188,5 +211,6 @@ module.exports = {
     getProdukByKategori,
     createProduk,
     updateProduk,
-    deleteProduk
+    deleteProduk,
+    getProdukById
 }

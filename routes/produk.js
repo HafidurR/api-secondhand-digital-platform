@@ -5,6 +5,7 @@ const uploadImage = require('../misc/multerImage')
 const restrict = require('../misc/passport')
 
 router.get('/getByNama', produkRoute.getProdukByNamaProduk)
+router.get('/:id', produkRoute.getProdukById)
 router.get('/', produkRoute.getAllProduk)
 router.get('/:kategoriId', produkRoute.getProdukByKategori)
 router.post('/', restrict, uploadImage.array('gambar', 4), produkRoute.createProduk)
