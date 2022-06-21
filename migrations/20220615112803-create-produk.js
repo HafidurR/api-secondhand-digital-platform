@@ -23,7 +23,11 @@ module.exports = {
         type: Sequelize.TEXT
       },
       kategoriId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {         // User belongsTo Kategoris 1:1
+          model: 'Kategoris',
+          key: 'id'
+        }
       },
       createdAt: {
         allowNull: false,

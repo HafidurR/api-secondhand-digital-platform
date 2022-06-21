@@ -9,10 +9,20 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       userId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {         // User belongsTo User id 1:1
+          model: 'Users',
+          key: 'id'
+        }
       },
       produkId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {         // User belongsTo Produk 1:1
+          model: 'Produks',
+          key: 'id'
+        }
       },
       status_transaksi: {
         type: Sequelize.STRING
