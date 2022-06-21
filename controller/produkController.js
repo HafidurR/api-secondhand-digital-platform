@@ -64,36 +64,45 @@ const getProdukByKategori = async (req, res) => {
 }
 
 const createProduk = async (req, res) => {
-    const { nama_produk, harga, deskripsi, kategoriId } = req.body
-    const arrOfGambar = [
-        req.files[0].path,
-        req.files[1].path,
-        req.files[2].path,
-        req.files[3].path
-    ]
-    const produkData = {
-        nama_produk: nama_produk,
-        gambar: arrOfGambar,
-        harga: harga,
-        deskripsi: deskripsi,
-        kategoriId: kategoriId
-    }
-    const tambahProduk = await Produk.create(produkData)
-    res.status(201).json({
-        status: 'Success',
-        data: {
-            nama_produk: produkData.nama_produk,
-            gambar: produkData.gambar,
-            harga: produkData.harga,
-            deskripsi: produkData.deskripsi,
-            kategoriId: produkData.kategoriId
+    try {
+        const { nama_produk, harga, deskripsi, kategoriId } = req.body
+        const jwt_payload = req.user
+        console.log(jwt_payload)
+        if(jwt_payload.profile !== 0) throw new Error (`Lengkapi profile terlebih dahulu`)
+        const arrOfGambar = [
+            req.files[0].path,
+            req.files[1].path,
+            req.files[2].path,
+            req.files[3].path
+        ]
+        const produkData = {
+            nama_produk: nama_produk,
+            gambar: arrOfGambar,
+            harga: harga,
+            deskripsi: deskripsi,
+            kategoriId: kategoriId
         }
-    }) 
-    if (!produkData) {
+        // Iterate produkData object
+        for (const item in produkData) {
+            if(produkData[item] === undefined) throw new Error (`Lengkapi tabel terlebih dahulu!`)  
+        }
+        // Create Produk
+        const tambahProduk = await Produk.create(produkData)
+        return res.status(201).json({
+            status: 'Success',
+            data: {
+                nama_produk: produkData.nama_produk,
+                gambar: produkData.gambar,
+                harga: produkData.harga,
+                deskripsi: produkData.deskripsi,
+                kategoriId: produkData.kategoriId
+            }
+        }) 
+    } catch (error) {
         return res.status(400).json({
-            status: 'Error',
-            message: 'Lengkapi tabel terlebih dahulu!'
-        })
+                    status: 'Error',
+                    message: error.message
+                })
     }
 }
 
