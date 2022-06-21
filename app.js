@@ -23,6 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/users', usersRouter);
 app.use('/produk', produkRouter)
 app.use('/categories', categoryRouter);
-app.use('/transaction', transactionRouter);
+app.use('/seller', transactionRouter);
+app.use('/buyer', transactionRouter);
 
 module.exports = app;
