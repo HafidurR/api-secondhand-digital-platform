@@ -1,24 +1,32 @@
 const {Produk} = require('../models');
 const model = require('../models');
-const produk = require('../models/produk');
 
 const getAllProduk = async (req, res) => {
-    let { page, row } = req.query
-    page -= 1
-    const options = {
-        attributes: ['id', 'nama_produk', 'gambar', 'harga', 'deskripsi', 'kategoriId'],
-        include: [{
-            model: model.User,
-            attributes: ['nama', 'kotaId']
-        }]
-    };
-    if (page) options.offset = page;
-    if (row) options.offset = row;
-    const allProduk = await Produk.findAll(options);
-    return res.status(200).json({
-        status: 'Success',
-        data: allProduk
-    })
+    try {
+        let { page, row } = req.query
+        page -= 1
+        const options = {
+            attributes: ['id', 'nama_produk', 'gambar', 'harga', 'deskripsi', 'kategoriId'],
+            include: [{
+                model: model.User,
+                attributes: ['nama', 'kotaId']
+            }]
+        };
+        if (page) options.offset = page;
+        if (row) options.offset = row;
+        const allProduk = await Produk.findAll(options);
+        return res.status(200).json({
+            status: 'Success',
+            data: allProduk
+        })
+
+    } catch (error) {
+        return res.status(500).json({
+            status: "Bad Request",
+            data: error.message
+        })
+    }
+
 }
 
 const getProdukByNamaProduk = async (req, res) => {
