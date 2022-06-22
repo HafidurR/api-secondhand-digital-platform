@@ -129,6 +129,9 @@ const createProduk = async (req, res) => {
                 where: {
                 id: tambahProduk.id
             },
+            exclude: {
+                attributes: ['createdAt', 'updatedAt']
+            },
             include: {
                 model: model.User,
                 attributes: ['nama', 'kotaId']
