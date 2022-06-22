@@ -22,12 +22,19 @@ module.exports = {
       deskripsi: {
         type: Sequelize.TEXT
       },
+      userId: {
+        type: Sequelize.INTEGER
+      },
       kategoriId: {
         type: Sequelize.INTEGER,
         references: {         // User belongsTo Kategoris 1:1
           model: 'Kategoris',
           key: 'id'
         }
+      },
+      isPublish: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: false
       },
       createdAt: {
         allowNull: false,

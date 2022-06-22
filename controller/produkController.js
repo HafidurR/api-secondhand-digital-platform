@@ -1,10 +1,16 @@
-const { Produk } = require('../models');
+const {Produk} = require('../models');
+const model = require('../models');
+const produk = require('../models/produk');
 
 const getAllProduk = async (req, res) => {
     let { page, row } = req.query
     page -= 1
     const options = {
-        attributes: ['id', 'nama_produk', 'gambar', 'harga', 'deskripsi', 'kategoriId']
+        attributes: ['id', 'nama_produk', 'gambar', 'harga', 'deskripsi', 'kategoriId'],
+        include: [{
+            model: model.User,
+            attributes: ['nama', 'kotaId']
+        }]
     };
     if (page) options.offset = page;
     if (row) options.offset = row;
@@ -20,6 +26,10 @@ const getProdukByNamaProduk = async (req, res) => {
     page -= 1
     const options = {
         attributes: ['id', 'nama_produk', 'gambar', 'harga', 'deskripsi', 'kategoriId'],
+        include: [{
+            model: model.User,
+            attributes: ['nama', 'kotaId']
+        }],
         where: {
             nama_produk: nama_produk
         }
@@ -45,6 +55,10 @@ const getProdukByKategori = async (req, res) => {
     const kategoriId = req.params.kategoriId
     const options = {
         attributes: ['id', 'nama_produk', 'gambar', 'harga', 'deskripsi', 'kategoriId'],
+        include: [{
+            model: model.User,
+            attributes: ['nama', 'kotaId']
+        }],
         where: {
             kategoriId
         }
@@ -63,58 +77,83 @@ const getProdukByKategori = async (req, res) => {
     } 
 }
 
-const createProduk = async (req, res) => {
-    try {
-        const { nama_produk, harga, deskripsi, kategoriId } = req.body
-        const jwt_payload = req.user
-        console.log(jwt_payload)
-        if(jwt_payload.profile !== 0) throw new Error (`Lengkapi profile terlebih dahulu`)
-        const arrOfGambar = [
-            req.files[0].path,
-            req.files[1].path,
-            req.files[2].path,
-            req.files[3].path
-        ]
-        const produkData = {
-            nama_produk: nama_produk,
-            gambar: arrOfGambar,
-            harga: harga,
-            deskripsi: deskripsi,
-            kategoriId: kategoriId
-        }
-        // Iterate produkData object
-        for (const item in produkData) {
-            if(produkData[item] === undefined) throw new Error (`Lengkapi tabel terlebih dahulu!`)  
-        }
-        // Create Produk
-        const tambahProduk = await Produk.create(produkData)
-        return res.status(201).json({
-            status: 'Success',
-            data: {
-                nama_produk: produkData.nama_produk,
-                gambar: produkData.gambar,
-                harga: produkData.harga,
-                deskripsi: produkData.deskripsi,
-                kategoriId: produkData.kategoriId
-            }
-        }) 
-    } catch (error) {
-        return res.status(400).json({
-                    status: 'Error',
-                    message: error.message
-                })
+const getProdukById = async (req, res) => {
+    const id = req.params.id
+    const options = {
+        attributes: ['id', 'nama_produk', 'gambar', 'harga', 'deskripsi', 'kategoriId'],
+        include: [{
+            model: model.User,
+            attributes: ['nama', 'kotaId']
+        }]
     }
+    
+    const cariProduk = await Produk.findByPk(id, options)
+    if (cariProduk) {
+        return res.status(200).json({
+            status: 'Success',
+            data: cariProduk
+        })
+    } else if (!cariProduk) {
+        return res.status(400).json({
+            status: 'Error',
+            message: `Produk dengan kategori ${req.params.kategoriId} tidak ditemukan`
+        })
+    } 
+}
+
+const createProduk = async (req, res) => {
+    const { nama_produk, harga, deskripsi, kategoriId } = req.body
+    const jwt_payload = req.user.id
+    if(jwt_payload.profile !== 0) {
+        res.status(400).json({
+            status: 'Error',
+            message: 'Lengkapi profil terlebih dahulu!'
+        })
+    }
+    const foundUser = req.user.id
+    const arrOfGambar = []
+    req.files.forEach(element => {
+        arrOfGambar.push(element.path)
+    });
+    const produkData = {
+        nama_produk: nama_produk,
+        gambar: arrOfGambar,
+        harga: harga,
+        deskripsi: deskripsi,
+        kategoriId: kategoriId,
+        userId: foundUser
+    }
+    const tambahProduk = await Produk.create(produkData)
+    if (tambahProduk) {
+        const produk = await Produk.findOne(
+            {
+                where: {
+                id: tambahProduk.id
+            },
+            include: {
+                model: model.User,
+                attributes: ['nama', 'kotaId']
+            }
+        }
+        )
+        res.status(201).json({
+            status: 'Success',
+            data: produk
+        }) 
+    }
+        return res.status(400).json({
+            status: 'Error',
+            message: 'Lengkapi tabel terlebih dahulu!'
+        })
 }
 
 const updateProduk = async (req, res) => {
-    const {id} = req.params
+    const id = req.params.id
     const {nama_produk, harga, deskripsi, kategoriId} = req.body
-    const arrOfGambar = [
-        req.files[0].path,
-        req.files[1].path,
-        req.files[2].path,
-        req.files[3].path
-    ]
+    const arrOfGambar = []
+    req.files.forEach(element => {
+        arrOfGambar.push(element.path)
+    })
     const cariProduk = await Produk.findOne({
         where: {
             id
@@ -161,6 +200,28 @@ const updateProduk = async (req, res) => {
     }
 }
 
+const isPublish = async(req, res) => {
+    const id = req.params.id
+    const isPublish = req.body
+    const update = await Produk.update(isPublish,{
+        where: {
+            id
+        }
+    })
+    .then (result => {
+        return res.status(200).json({
+            status: 'Success',
+            message: 'Success publish produk'
+        })
+    }) 
+    .catch (error => {
+        return res.status(500).json({
+            status: 'Error',
+            message: error.message
+        })
+    })
+}
+
 const deleteProduk = async(req, res) => {
     const {id} = req.params
     const cariProduk = await Produk.findByPk(id)
@@ -185,5 +246,7 @@ module.exports = {
     getProdukByKategori,
     createProduk,
     updateProduk,
-    deleteProduk
+    deleteProduk,
+    getProdukById,
+    isPublish
 }
