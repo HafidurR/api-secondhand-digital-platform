@@ -17,11 +17,23 @@ const getAllBuyerTransaction = async (req, res) => {
         // const bearerHeader = req.headers['authorization'];
         // const jwt_payload = decode(bearerHeader)
         const jwt_payload = req.user //catch token from passport.js middleware
-        console.log(jwt_payload);
+        console.log(jwt_payload)
+        const options = {
+            where : {id: jwt_payload.id},
+            attributes: { exclude: ['createdAt, updatedAt'] }
+        }
         const findTransaction = await Transaksi.findAll()
+        return res.status(200).json({
+            status: "Success",
+            data: findTransaction
+        })
+        
         
     } catch (error){
-        console.log (error)
+        return res.status(500).json({
+            status: "Bad Request",
+            message: {}
+        })
     }
 }
 
@@ -65,7 +77,9 @@ const createBuyerTransaction = async (req, res) => {
 
 const getBuyerTransactionById = async (req, res) => {
     try {
-
+        const jwt_payload = req.user
+        console.log(jwt_payload)
+        return res.redirect('/buyer/transaction')
     } catch (error) {
 
     }
