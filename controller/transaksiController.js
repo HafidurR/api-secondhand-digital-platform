@@ -58,7 +58,7 @@ const createBuyerTransaction = async (req, res) => {
             const createTransaction = await Transaksi.create(transactionData)
             return res.status(201).json({
                 status: "Success",
-                message: "Sukses membuat transasi"
+                message: "Sukses membuat transaksi"
             })
         } else {
             return res.status(400).json({
@@ -78,15 +78,53 @@ const createBuyerTransaction = async (req, res) => {
 const getBuyerTransactionById = async (req, res) => {
     try {
         const jwt_payload = req.user
-        console.log(jwt_payload)
-        return res.redirect('/buyer/transaction')
+        const id = req.params.id
+        const options = {
+            where: { id: id, userId: jwt_payload.id}
+        }
+        
+        const findTransaction = await Transaksi.findOne(options)
+        return res.status(201).json({
+            status: "Success",
+            message: findTransaction
+        })
     } catch (error) {
+        return res.status(500).json({
+            status: "Bad Request",
+            message: error.message
+        })
+    }
+}
 
+const updateBuyerTransaction = async (req, res) => {
+    try {
+        const { harga_tawar } = req.body
+        const id = req.params.id
+        const jwt_payload = req.user
+        const options = {
+            where: { id: id }
+        }
+        const findTransaction = await Transaksi.findOne(options)
+        if(!findTransaction) throw new Error ("Transaksi tidak ditemukan")
+        const updatedData = { harga_jual: harga_tawar }
+        const updateHargaTawar = await Transaksi.update(updatedData, options)
+        await findTransaction.reload()
+        return res.status(201).json({
+            status: "Success",
+            message: findTransaction
+        })
+
+    } catch (error) {
+        return res.status(400).json({
+            status: "Bad Request",
+            message: error.message
+        })
     }
 }
 
 module.exports = {
     getAllBuyerTransaction,
     createBuyerTransaction,
-    getBuyerTransactionById
+    getBuyerTransactionById,
+    updateBuyerTransaction
 }
