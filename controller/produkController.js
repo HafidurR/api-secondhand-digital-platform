@@ -1,6 +1,5 @@
 const {Produk} = require('../models');
 const model = require('../models');
-const produk = require('../models/produk');
 
 const getAllProduk = async (req, res) => {
     let { page, row } = req.query
@@ -102,52 +101,62 @@ const getProdukById = async (req, res) => {
 }
 
 const createProduk = async (req, res) => {
-    const { nama_produk, harga, deskripsi, kategoriId } = req.body
-    const jwt_payload = req.user.id
-    if(jwt_payload.profile !== 0) {
-        res.status(400).json({
-            status: 'Error',
-            message: 'Lengkapi profil terlebih dahulu!'
-        })
-    }
-    const foundUser = req.user.id
-    const arrOfGambar = []
-    req.files.forEach(element => {
-        arrOfGambar.push(element.path)
-    });
-    const produkData = {
-        nama_produk: nama_produk,
-        gambar: arrOfGambar,
-        harga: harga,
-        deskripsi: deskripsi,
-        kategoriId: kategoriId,
-        userId: foundUser
-    }
-    const tambahProduk = await Produk.create(produkData)
-    if (tambahProduk) {
-        const produk = await Produk.findOne(
-            {
-                where: {
-                id: tambahProduk.id
-            },
-            exclude: {
-                attributes: ['createdAt', 'updatedAt']
-            },
-            include: {
-                model: model.User,
-                attributes: ['nama', 'kotaId']
-            }
+    try {
+        const { nama_produk, harga, deskripsi, kategoriId } = req.body
+        const jwt_payload = req.user.id
+        if(jwt_payload.profile !== 0) {
+            res.status(400).json({
+                status: 'Error',
+                message: 'Lengkapi profil terlebih dahulu!'
+            })
         }
-        )
-        res.status(201).json({
-            status: 'Success',
-            data: produk
-        }) 
-    }
-        return res.status(400).json({
+        const foundUser = req.user.id
+        const arrOfGambar = []
+        req.files.forEach(element => {
+            arrOfGambar.push(element.path)
+        });
+        const produkData = {
+            nama_produk: nama_produk,
+            gambar: arrOfGambar,
+            harga: harga,
+            deskripsi: deskripsi,
+            kategoriId: kategoriId,
+            userId: foundUser
+        }
+        if (produkData.nama_produk === undefined || produkData.gambar.length == 0 || produkData.harga === undefined || produkData.deskripsi === undefined ||produkData.kategoriId === undefined) {
+            return res.status(400).json({
+                status: 'Error',
+                message: 'Lengkapi tabel terlebih dahulu!'
+            })
+        }
+        const tambahProduk = await Produk.create(produkData)
+        if (tambahProduk) {
+            const produk = await Produk.findOne(
+                {
+                    where: {
+                    id: tambahProduk.id
+                },
+                exclude: {
+                    attributes: ['createdAt', 'updatedAt']
+                },
+                include: {
+                    model: model.User,
+                    attributes: ['nama', 'kotaId']
+                }
+            }
+            )
+            return res.status(201).json({
+                status: 'Success',
+                data: produk
+            }) 
+        }
+    } catch (error) {
+        return res.status(500).json({
             status: 'Error',
-            message: 'Lengkapi tabel terlebih dahulu!'
+            message: 'Internal server error'
         })
+
+    }
 }
 
 const updateProduk = async (req, res) => {
