@@ -86,6 +86,7 @@ const getProdukById = async (req, res) => {
             attributes: ['nama', 'kotaId']
         }]
     }
+    
     const cariProduk = await Produk.findByPk(id, options)
     if (cariProduk) {
         return res.status(200).json({
