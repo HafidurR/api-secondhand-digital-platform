@@ -28,6 +28,10 @@ module.exports = {
       kategoriId: {
         type: Sequelize.INTEGER
       },
+      isPublish: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: false
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

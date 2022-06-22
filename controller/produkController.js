@@ -1,5 +1,6 @@
 const {Produk} = require('../models');
-const model = require('../models')
+const model = require('../models');
+const produk = require('../models/produk');
 
 const getAllProduk = async (req, res) => {
     let { page, row } = req.query
@@ -101,6 +102,13 @@ const getProdukById = async (req, res) => {
 
 const createProduk = async (req, res) => {
     const { nama_produk, harga, deskripsi, kategoriId } = req.body
+    const jwt_payload = req.user.id
+    if(jwt_payload.profile !== 0) {
+        res.status(400).json({
+            status: 'Error',
+            message: 'Lengkapi profil terlebih dahulu!'
+        })
+    }
     const foundUser = req.user.id
     const arrOfGambar = []
     req.files.forEach(element => {
@@ -115,27 +123,31 @@ const createProduk = async (req, res) => {
         userId: foundUser
     }
     const tambahProduk = await Produk.create(produkData)
-    res.status(201).json({
-        status: 'Success',
-        data: {
-            nama_produk: produkData.nama_produk,
-            gambar: produkData.gambar,
-            harga: produkData.harga,
-            deskripsi: produkData.deskripsi,
-            kategoriId: produkData.kategoriId,
-            user: produkData.userId
+    if (tambahProduk) {
+        const produk = await Produk.findOne(
+            {
+                where: {
+                id: tambahProduk.id
+            },
+            include: {
+                model: model.User,
+                attributes: ['nama', 'kotaId']
+            }
         }
-    }) 
-    if (!produkData) {
+        )
+        res.status(201).json({
+            status: 'Success',
+            data: produk
+        }) 
+    }
         return res.status(400).json({
             status: 'Error',
             message: 'Lengkapi tabel terlebih dahulu!'
         })
-    }
 }
 
 const updateProduk = async (req, res) => {
-    const {id} = req.params.id
+    const id = req.params.id
     const {nama_produk, harga, deskripsi, kategoriId} = req.body
     const arrOfGambar = []
     req.files.forEach(element => {
@@ -187,6 +199,28 @@ const updateProduk = async (req, res) => {
     }
 }
 
+const isPublish = async(req, res) => {
+    const id = req.params.id
+    const isPublish = req.body
+    const update = await Produk.update(isPublish,{
+        where: {
+            id
+        }
+    })
+    .then (result => {
+        return res.status(200).json({
+            status: 'Success',
+            message: 'Success publish produk'
+        })
+    }) 
+    .catch (error => {
+        return res.status(500).json({
+            status: 'Error',
+            message: error.message
+        })
+    })
+}
+
 const deleteProduk = async(req, res) => {
     const {id} = req.params
     const cariProduk = await Produk.findByPk(id)
@@ -212,5 +246,6 @@ module.exports = {
     createProduk,
     updateProduk,
     deleteProduk,
-    getProdukById
+    getProdukById,
+    isPublish
 }

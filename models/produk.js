@@ -39,7 +39,8 @@ module.exports = (sequelize, DataTypes) => {
     harga: DataTypes.STRING,
     deskripsi: DataTypes.TEXT,
     userId: DataTypes.INTEGER,
-    kategoriId: DataTypes.INTEGER
+    kategoriId: DataTypes.INTEGER,
+    isPublish: DataTypes.BOOLEAN
   }, {
     sequelize,
     modelName: 'Produk',
