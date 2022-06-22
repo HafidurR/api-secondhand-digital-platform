@@ -116,7 +116,7 @@ const createProduk = async (req, res) => {
         if(jwt_payload.profile !== 0) {
             return res.status(400).json({
                 status: 'Error',
-                message: error.message
+                message: `Lengkapi profil terlebih dahulu`
             })
         }
         const foundUser = req.user.id
