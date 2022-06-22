@@ -116,15 +116,15 @@ const createProduk = async (req, res) => {
         if(jwt_payload.profile !== 0) {
             return res.status(400).json({
                 status: 'Error',
-                message: error.message
+                message: 'Lengkapi profile terlebih dahulu'
             })
         }
         const foundUser = req.user.id
-        console.log(jwt_payload)
         const arrOfGambar = []
         req.files.forEach(element => {
             arrOfGambar.push(element.path)
         });
+        console.log(arrOfGambar)
         const produkData = {
             nama_produk: nama_produk,
             gambar: arrOfGambar,
@@ -146,7 +146,7 @@ const createProduk = async (req, res) => {
                 }
             }
             )
-            res.status(201).json({
+            return res.status(201).json({
                 status: 'Success',
                 data: produk
             }) 
@@ -154,7 +154,7 @@ const createProduk = async (req, res) => {
     } catch (error) {
         return res.status(500).json({
             status: 'Error',
-            message: 'Internal server error'
+            message: error.message
         })
 
     }
