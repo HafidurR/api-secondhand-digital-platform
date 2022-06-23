@@ -9,7 +9,8 @@ const cors = require('cors')
 const usersRouter = require('./routes/users');
 const categoryRouter = require('./routes/category.routes');
 const produkRouter = require('./routes/produk')
-const transactionRouter = require('./routes/transaction.routes')
+const buyerRouter = require('./routes/buyer.routes')
+const sellerRouter = require('./routes/seller.routes')
 
 const app = express();
 
@@ -23,7 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/users', usersRouter);
 app.use('/produk', produkRouter)
 app.use('/categories', categoryRouter);
-app.use('/seller', transactionRouter);
-app.use('/buyer', transactionRouter);
+app.use('/seller', sellerRouter);
+app.use('/buyer', buyerRouter);
 
 module.exports = app;
