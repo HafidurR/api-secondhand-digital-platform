@@ -16,6 +16,11 @@ module.exports = (sequelize, DataTypes) => {
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE'
       })
+      this.hasOne(models.Kota, {
+        foreignKey: 'kotaId',
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE'
+      })
     }
   };
   User.init({
