@@ -47,8 +47,8 @@ const login = async (req, res) => {
             // Check profile
             const checkProfile = foundUser.toJSON()
             let profile = 0;
-            for (const item in checkProfile) { 
-                if(checkProfile[item] === null) profile += 1
+            for (const item in checkProfile) {
+                if (checkProfile[item] === null) profile += 1
             }
             const payload = {
                 id: foundUser.id,
@@ -74,7 +74,7 @@ const login = async (req, res) => {
 
 const getAll = async (req, res) => {
     try {
-        await User.findAll({
+        const result = await User.findAll({
             attributes: ['id', 'nama', 'email', 'alamat'],
             include: [
                 {

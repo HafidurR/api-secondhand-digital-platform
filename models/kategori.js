@@ -11,6 +11,9 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Kategori.belongsTo(models.Produk, {
+        foreignKey: 'kategoriId'
+      });
     }
   };
   Kategori.init({
