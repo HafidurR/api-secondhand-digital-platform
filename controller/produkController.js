@@ -11,6 +11,7 @@ const getAllProduk = async (req, res) => {
             attributes: ['nama', 'kotaId']
         }]
     };
+    
     if (page) options.offset = page;
     if (row) options.offset = row;
     const allProduk = await Produk.findAll(options);
