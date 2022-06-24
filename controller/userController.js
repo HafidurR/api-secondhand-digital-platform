@@ -46,6 +46,7 @@ const login = async (req, res) => {
         if (isValidPassword) {
             // Check profile
             const checkProfile = foundUser.toJSON()
+            
             let profile = 0;
             for (const item in checkProfile) { 
                 if(checkProfile[item] === null) profile += 1
