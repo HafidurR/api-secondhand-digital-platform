@@ -10,6 +10,7 @@ const usersRouter = require('./routes/users');
 const categoryRouter = require('./routes/category.routes');
 const produkRouter = require('./routes/produk')
 const transactionRouter = require('./routes/transaction.routes')
+const kotaRouter = require('./routes/kota.routes')
 
 const app = express();
 
@@ -24,5 +25,6 @@ app.use('/users', usersRouter);
 app.use('/produk', produkRouter)
 app.use('/categories', categoryRouter);
 app.use('/transaction', transactionRouter);
+app.use('/kota', kotaRouter);
 
 module.exports = app;
