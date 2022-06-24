@@ -46,6 +46,7 @@ const login = async (req, res) => {
         if (isValidPassword) {
             // Check profile
             const checkProfile = foundUser.toJSON()
+
             let profile = 0;
             for (const item in checkProfile) {
                 if (checkProfile[item] === null) profile += 1
@@ -108,8 +109,9 @@ const updateUser = async (req, res) => {
     try {
         const id = req.params.id;
         const { nama, alamat, kotaId, no_telp, foto, email, password } = req.body;
+        const hash = await bcrypt.hash(password, 12);
         const updatedData = {
-            nama, alamat, kotaId, no_telp, foto, email, password
+            nama, alamat, kotaId, no_telp, foto, email, password: hash
         }
 
         await User.findOne({

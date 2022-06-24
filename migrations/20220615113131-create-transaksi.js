@@ -8,7 +8,15 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      userId: {
+      sellerId: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {         // User belongsTo User id 1:1
+          model: 'Users',
+          key: 'id'
+        }
+      },
+      buyerId: {
         type: Sequelize.INTEGER,
         allowNull: false,
         references: {         // User belongsTo User id 1:1
