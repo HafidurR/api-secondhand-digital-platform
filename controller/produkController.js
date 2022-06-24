@@ -124,7 +124,7 @@ const createProduk = async (req, res) => {
         req.files.forEach(element => {
             arrOfGambar.push(element.path)
         });
-        console.log(arrOfGambar)
+       
         const produkData = {
             nama_produk: nama_produk,
             gambar: arrOfGambar,
