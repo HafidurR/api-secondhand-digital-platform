@@ -33,14 +33,20 @@ const createBuyerTransaction = async (req, res) => {
         // console.log(jwt_payload.id);
         const findTransaction = await Transaksi.findOne({
             where: {
-                userId: jwt_payload.id,
+                buyerId: jwt_payload.id,
                 produkId: produkId
             }
         });
-
+        const findProduct = await Produk.findOne({
+            where: {
+                id: produkId
+            }
+        })
+        // return console.log(findProduct);
         if(findTransaction === null) {
             const transactionData = {
-                userId: jwt_payload.id,
+                buyerId: jwt_payload.id,
+                sellerId: findProduct.userId,
                 produkId: produkId,
                 status_transaksi: "pending",
                 harga_jual: harga_tawar
