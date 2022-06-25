@@ -61,12 +61,13 @@ const login = async (req, res) => {
             return res.status(200).json({
                 token: token
             });
+        } else {
+            throw new Error ("Wrong email or password")
         }
-
     } catch (error) {
         return res.status(400).json({
             status: 'Failed',
-            message: "Wrong email or password"
+            message: error.message
         });
 
     }
