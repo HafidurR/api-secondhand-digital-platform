@@ -30,7 +30,6 @@ const createBuyerTransaction = async (req, res) => {
     try {
         const { produkId, harga_tawar } = req.body 
         const jwt_payload = req.user //catch token from passport.js middleware
-        // console.log(jwt_payload.id);
         const findTransaction = await Transaksi.findOne({
             where: {
                 buyerId: jwt_payload.id,
@@ -42,6 +41,7 @@ const createBuyerTransaction = async (req, res) => {
                 id: produkId
             }
         })
+        if(jwt_payload.id === findProduct.userId) throw new Error ("Transaction cannot be done ")
         // return console.log(findProduct);
         if(findTransaction === null) {
             const transactionData = {
@@ -67,7 +67,7 @@ const createBuyerTransaction = async (req, res) => {
     } catch (error) {
         return res.status(500).json({
             status: "Bad Request",
-            message: {}
+            message: error.message
         })
     }
 }
