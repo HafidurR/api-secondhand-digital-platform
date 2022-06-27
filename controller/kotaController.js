@@ -6,7 +6,6 @@ const getAllKota = async (req, res) => {
     const options = {
         attributes: ['id', 'nama_kota']
     };
-    
     if (page) options.offset = page;
     if (row) options.offset = row;
     const allKota = await Kota.findAll(options);
