@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       //   foreignKey: 'kotaId'
       // })
       Kota.belongsTo(models.User, {
-        foreignKey: 'kotaId'
+        foreignKey: 'kotaId' 
       });
     }
   };
