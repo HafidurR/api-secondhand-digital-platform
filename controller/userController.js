@@ -36,14 +36,15 @@ const register = async (req, res) => {
 const login = async (req, res) => {
     try {
         const { email, password } = req.body;
+
         const foundUser = await User.findOne({
             where: {
                 email: email
             }
         });
-        const isValidPassword = bcrypt.compareSync(password, foundUser.password);
-        // console.log(isValidPassword)
-        if (isValidPassword) {
+        
+        if (foundUser) {
+            const isValidPassword = bcrypt.compareSync(password, foundUser.password);
             // Check profile
             const checkProfile = foundUser.toJSON()
 
@@ -62,12 +63,16 @@ const login = async (req, res) => {
                 token: token
             });
         } else {
-            throw new Error ("Wrong email or password")
+            return res.status(400).json({
+                status: 'Failed',
+                message: 'Wrong email or password'
+            });
         }
+
     } catch (error) {
-        return res.status(400).json({
-            status: 'Failed',
-            message: error.message
+        return res.status(500).json({
+            status: 'Bad Request',
+            message: 'Internal Server Error'
         });
 
     }
