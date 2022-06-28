@@ -2,6 +2,7 @@ const { User, Kota } = require('../models');
 const { sendEmail } = require('../misc/mailer')
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const e = require('express');
 
 const register = async (req, res) => {
     try {
@@ -36,43 +37,43 @@ const register = async (req, res) => {
 const login = async (req, res) => {
     try {
         const { email, password } = req.body;
-
-        const foundUser = await User.findOne({
-            where: {
-                email: email
-            }
-        });
+        const foundUser = await User.findOne( { where: { email: email } } )
         
         if (foundUser) {
-            const isValidPassword = bcrypt.compareSync(password, foundUser.password);
             // Check profile
-            const checkProfile = foundUser.toJSON()
-
-            let profile = 0;
-            for (const item in checkProfile) {
-                if (checkProfile[item] === null) profile += 1
+            const isValidPassword = bcrypt.compareSync(password, foundUser.password);
+            if(isValidPassword) {
+                const checkProfile = foundUser.toJSON()
+                let profile = 0;
+    
+                for (const item in checkProfile) {
+                    if (checkProfile[item] === null) profile += 1
+                }
+    
+                const payload = {
+                    id: foundUser.id,
+                    name: foundUser.name,
+                    email: foundUser.email,
+                    profile: profile
+                };
+    
+                const token = jwt.sign(payload, process.env.JWT_SECRET_KEY, { expiresIn: '1h' });
+                
+                return res.status(200).json({
+                    token: token
+                });
+            } else {
+                throw new Error ('Wrong email or password')
             }
-            const payload = {
-                id: foundUser.id,
-                name: foundUser.name,
-                email: foundUser.email,
-                profile: profile
-            };
-            const token = jwt.sign(payload, process.env.JWT_SECRET_KEY, { expiresIn: '1h' });
-            return res.status(200).json({
-                token: token
-            });
+            
         } else {
-            return res.status(400).json({
-                status: 'Failed',
-                message: 'Wrong email or password'
-            });
+            throw new Error ('Wrong email or password')
         }
-
+        
     } catch (error) {
-        return res.status(500).json({
-            status: 'Bad Request',
-            message: 'Internal Server Error'
+        return res.status(400).json({
+            status: 'Failed',
+            message: error.message
         });
 
     }
