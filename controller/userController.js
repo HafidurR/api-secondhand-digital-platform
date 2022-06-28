@@ -69,10 +69,7 @@ const login = async (req, res) => {
         } else {
             throw new Error ('Wrong email or password')
         }
-<<<<<<< HEAD
-=======
         
->>>>>>> feature-login
     } catch (error) {
         return res.status(400).json({
             status: 'Failed',
