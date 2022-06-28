@@ -68,7 +68,6 @@ const login = async (req, res) => {
                 message: 'Wrong email or password'
             });
         }
-
     } catch (error) {
         return res.status(500).json({
             status: 'Bad Request',
