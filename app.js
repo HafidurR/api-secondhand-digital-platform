@@ -12,6 +12,7 @@ const produkRouter = require('./routes/produk')
 const buyerRouter = require('./routes/buyer.routes')
 const sellerRouter = require('./routes/seller.routes')
 const kotaRouter = require('./routes/kota.routes')
+const notifikasiRouter = require('./routes/notifikasi.routes')
 
 const app = express();
 
@@ -28,5 +29,6 @@ app.use('/categories', categoryRouter);
 app.use('/seller', sellerRouter);
 app.use('/buyer', buyerRouter);
 app.use('/kota', kotaRouter);
+app.use('/notifikasi', notifikasiRouter)
 
 module.exports = app;
