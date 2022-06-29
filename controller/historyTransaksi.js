@@ -31,4 +31,4 @@ const getAllHistoryTransaction = async (req, res) => {
 //     }
 // }
 
-model.exports = getAllHistoryTransaction
+module.exports = getAllHistoryTransaction
