@@ -15,9 +15,18 @@ const getAllProduk = async (req, res) => {
         if (page) options.offset = page;
         if (row) options.offset = row;
         const allProduk = await Produk.findAll(options);
+        let dataProduk = {
+            id: allProduk[0].id,
+            namaProduk: allProduk[0].nama_produk,
+            gambar: allProduk[0].gambar,
+            harga: allProduk[0].harga,
+            deskripsi: allProduk[0].deskripsi,
+            kategoriId: allProduk[0].kategoriId,
+            user: allProduk[0].User
+        }
         return res.status(200).json({
             status: 'Success',
-            data: allProduk
+            data: dataProduk
         })
 
     } catch (error) {
@@ -45,6 +54,15 @@ const getProdukByNamaProduk = async (req, res) => {
     if (page) options.offset = page;
     if (row) options.offset = row;
     const allProduk = await Produk.findAll(options);
+    let dataProduk = {
+        id: allProduk[0].id,
+        namaProduk: allProduk[0].nama_produk,
+        gambar: allProduk[0].gambar,
+        harga: allProduk[0].harga,
+        deskripsi: allProduk[0].deskripsi,
+        kategoriId: allProduk[0].kategoriId,
+        user: allProduk[0].User
+    }
     if (allProduk.length == 0) {
         return res.status(404).json({
             status: 'Error',
@@ -54,7 +72,7 @@ const getProdukByNamaProduk = async (req, res) => {
     else if (allProduk) {
         return res.status(200).json({
             status: 'Success',
-            data: allProduk
+            data: dataProduk
         })
     }
 }
@@ -72,6 +90,15 @@ const getProdukByKategori = async (req, res) => {
         }
     }
     const cariProduk = await Produk.findAll(options)
+    let dataProduk = {
+        id: cariProduk[0].id,
+        namaProduk: cariProduk[0].nama_produk,
+        gambar: cariProduk[0].gambar,
+        harga: cariProduk[0].harga,
+        deskripsi: cariProduk[0].deskripsi,
+        kategoriId: cariProduk[0].kategoriId,
+        user: cariProduk[0].User
+    }
     if (cariProduk.length == 0) {
         return res.status(400).json({
             status: 'Error',
@@ -80,7 +107,7 @@ const getProdukByKategori = async (req, res) => {
     } else if (cariProduk) {
         return res.status(200).json({
             status: 'Success',
-            data: cariProduk
+            data: dataProduk
         })
     } 
 }
@@ -96,15 +123,25 @@ const getProdukById = async (req, res) => {
     }
     
     const cariProduk = await Produk.findByPk(id, options)
+    // return console.log(cariProduk.id);
+    let dataProduk = {
+        id: cariProduk.id,
+        namaProduk: cariProduk.nama_produk,
+        gambar: cariProduk.gambar,
+        harga: cariProduk.harga,
+        deskripsi: cariProduk.deskripsi,
+        kategoriId: cariProduk.kategoriId,
+        user: cariProduk.User
+    }
     if (cariProduk) {
         return res.status(200).json({
             status: 'Success',
-            data: cariProduk
+            data: dataProduk
         })
     } else if (!cariProduk) {
-        return res.status(400).json({
+        return res.status(404).json({
             status: 'Error',
-            message: `Produk dengan kategori ${req.params.kategoriId} tidak ditemukan`
+            message: `Produk dengan id ${req.params.id} tidak ditemukan`
         })
     } 
 }
