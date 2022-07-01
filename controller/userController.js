@@ -118,7 +118,7 @@ const updateUser = async (req, res) => {
         const { nama, alamat, kotaId, no_telp, foto, email, password } = req.body;
         const hash = await bcrypt.hash(password, 12);
         const updatedData = {
-            nama, alamat, kotaId, no_telp, foto, email, password: hash
+            nama, alamat, kotaId, no_telp, foto, email
         }
 
         await User.findOne({
