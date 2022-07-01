@@ -115,8 +115,8 @@ const getAll = async (req, res) => {
 const updateUser = async (req, res) => {
     try {
         const id = req.params.id;
-        const { nama, alamat, kotaId, no_telp, foto, email, password } = req.body;
-        const hash = await bcrypt.hash(password, 12);
+        const { nama, alamat, kotaId, no_telp, foto, email } = req.body;
+        // const hash = await bcrypt.hash(password, 12);
         const updatedData = {
             nama, alamat, kotaId, no_telp, foto, email
         }
