@@ -5,7 +5,7 @@ const getAllNotification = async (req, res) => {
         const options = {
             include: [{
                 model: Produk,
-                attributes: ['nama_produk', 'gambar', 'harga']
+                attributes: ['namaProduk', 'gambar', 'harga']
             }]
         }
         const findTransaction = await Transaksi.findAll(options)

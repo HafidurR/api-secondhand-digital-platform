@@ -8,7 +8,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      nama_kota: {
+      namaKota: {
         type: Sequelize.STRING
       },
       createdAt: {

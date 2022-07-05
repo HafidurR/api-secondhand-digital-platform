@@ -4,7 +4,7 @@ const getAllKota = async (req, res) => {
     let { page, row } = req.query
     page -= 1
     const options = {
-        attributes: ['id', 'nama_kota']
+        attributes: ['id', 'namaKota']
     };
     if (page) options.offset = page;
     if (row) options.offset = row;

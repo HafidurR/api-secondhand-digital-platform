@@ -3,10 +3,10 @@ const model = require('../models');
 const getAllHistoryTransaction = async (req, res) => {
     try{
         const options = {
-            attributes: ['buyerId','harga_tawar'],
+            attributes: ['buyerId','hargaTawar'],
             include: [{
                 model: model.Produk,
-                attributes: ['nama_produk', 'gambar', 'harga']
+                attributes: ['namaProduk', 'gambar', 'harga']
             }]
         }
         const findHistoryTransaction = await Transaksi.findAll(options)

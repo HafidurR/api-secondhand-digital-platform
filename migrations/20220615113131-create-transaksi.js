@@ -32,10 +32,10 @@ module.exports = {
           key: 'id'
         }
       },
-      status_transaksi: {
+      statusTransaksi: {
         type: Sequelize.STRING
       },
-      harga_jual: {
+      hargaJual: {
         type: Sequelize.STRING
       },
       createdAt: {

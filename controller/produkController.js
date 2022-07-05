@@ -7,7 +7,7 @@ const getAllProduk = async (req, res) => {
         let { page, row } = req.query
         page -= 1
         const options = {
-            attributes: ['id', 'nama_produk', 'gambar', 'harga', 'deskripsi', 'kategoriId'],
+            attributes: ['id', 'namaProduk', 'gambar', 'harga', 'deskripsi', 'kategoriId'],
             include: [{
                 model: model.User,
                 attributes: ['nama', 'kotaId']
@@ -31,17 +31,17 @@ const getAllProduk = async (req, res) => {
 }
 
 const getProdukByNamaProduk = async (req, res) => {
-    let { page, row, nama_produk } = req.query
+    let { page, row, namaProduk } = req.query
     page -= 1
     const options = {
-        attributes: ['id', 'nama_produk', 'gambar', 'harga', 'deskripsi', 'kategoriId'],
+        attributes: ['id', 'namaProduk', 'gambar', 'harga', 'deskripsi', 'kategoriId'],
         include: [{
             model: model.User,
             attributes: ['nama', 'kotaId']
         }],
         where: {
-            nama_produk: {
-                [Op.iLike]: '%'+`${nama_produk}`+'%'
+            namaProduk: {
+                [Op.iLike]: '%'+`${namaProduk}`+'%'
             }
         }
     };
@@ -64,7 +64,7 @@ const getProdukByNamaProduk = async (req, res) => {
 const getProdukByKategori = async (req, res) => {
     const kategoriId = req.params.kategoriId
     const options = {
-        attributes: ['id', 'nama_produk', 'gambar', 'harga', 'deskripsi', 'kategoriId'],
+        attributes: ['id', 'namaProduk', 'gambar', 'harga', 'deskripsi', 'kategoriId'],
         include: [{
             model: model.User,
             attributes: ['nama', 'kotaId']
@@ -90,7 +90,7 @@ const getProdukByKategori = async (req, res) => {
 const getProdukById = async (req, res) => {
     const id = req.params.id
     const options = {
-        attributes: ['id', 'nama_produk', 'gambar', 'harga', 'deskripsi', 'kategoriId'],
+        attributes: ['id', 'namaProduk', 'gambar', 'harga', 'deskripsi', 'kategoriId'],
         include: [{
             model: model.User,
             attributes: ['nama', 'kotaId']
@@ -113,7 +113,7 @@ const getProdukById = async (req, res) => {
 
 const createProduk = async (req, res) => {
     try {
-        const { nama_produk, harga, deskripsi, kategoriId } = req.body
+        const { namaProduk, harga, deskripsi, kategoriId } = req.body
         const jwt_payload = req.user
         if(jwt_payload.profile !== 0) {
             return res.status(400).json({
@@ -128,7 +128,7 @@ const createProduk = async (req, res) => {
         });
        
         const produkData = {
-            nama_produk: nama_produk,
+            namaProduk: namaProduk,
             gambar: arrOfGambar,
             harga: harga,
             deskripsi: deskripsi,
@@ -165,7 +165,7 @@ const createProduk = async (req, res) => {
 
 const updateProduk = async (req, res) => {
     const id = req.params.id
-    const {nama_produk, harga, deskripsi, kategoriId} = req.body
+    const {namaProduk, harga, deskripsi, kategoriId} = req.body
     const arrOfGambar = []
     req.files.forEach(element => {
         arrOfGambar.push(element.path)
@@ -181,8 +181,8 @@ const updateProduk = async (req, res) => {
             message: `Produk dengan id ${req.params.id} tidak ditemukan`
         })
     }
-    if (nama_produk) {
-        cariProduk.nama_produk = nama_produk
+    if (namaProduk) {
+        cariProduk.namaProduk = namaProduk
     } 
     if (harga) {
         cariProduk.harga = harga
@@ -201,7 +201,7 @@ const updateProduk = async (req, res) => {
         res.status(200).json({
             status: 'success',
             data: {
-                nama_produk: cariProduk.nama_produk,
+                namaProduk: cariProduk.namaProduk,
                 gambar: cariProduk.gambar,
                 harga: cariProduk.harga,
                 deskripsi: cariProduk.deskripsi,
