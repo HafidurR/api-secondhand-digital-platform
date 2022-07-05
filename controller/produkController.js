@@ -1,23 +1,33 @@
 const {Produk} = require('../models');
 const model = require('../models');
+const { Op } = require("sequelize");
 
 const getAllProduk = async (req, res) => {
-    let { page, row } = req.query
-    page -= 1
-    const options = {
-        attributes: ['id', 'nama_produk', 'gambar', 'harga', 'deskripsi', 'kategoriId'],
-        include: [{
-            model: model.User,
-            attributes: ['nama', 'kotaId']
-        }]
-    };
-    if (page) options.offset = page;
-    if (row) options.offset = row;
-    const allProduk = await Produk.findAll(options);
-    return res.status(200).json({
-        status: 'Success',
-        data: allProduk
-    })
+    try {
+        let { page, row } = req.query
+        page -= 1
+        const options = {
+            attributes: ['id', 'nama_produk', 'gambar', 'harga', 'deskripsi', 'kategoriId'],
+            include: [{
+                model: model.User,
+                attributes: ['nama', 'kotaId']
+            }]
+        };
+        if (page) options.offset = page;
+        if (row) options.limit = row;
+        const allProduk = await Produk.findAll(options);
+        return res.status(200).json({
+            status: 'Success',
+            data: allProduk
+        })
+
+    } catch (error) {
+        return res.status(500).json({
+            status: "Bad Request",
+            data: error.message
+        })
+    }
+
 }
 
 const getProdukByNamaProduk = async (req, res) => {
@@ -30,19 +40,20 @@ const getProdukByNamaProduk = async (req, res) => {
             attributes: ['nama', 'kotaId']
         }],
         where: {
-            nama_produk: nama_produk
+            nama_produk: {
+                [Op.iLike]: '%'+`${nama_produk}`+'%'
+            }
         }
     };
     if (page) options.offset = page;
-    if (row) options.offset = row;
+    if (row) options.limit = row;
     const allProduk = await Produk.findAll(options);
-    if (allProduk.length == 0) {
+    if (allProduk.length === 0) {
         return res.status(404).json({
             status: 'Error',
             message: 'Pencarian tidak ditemukan'
         }) 
-    }
-    else if (allProduk) {
+    } else if (allProduk) {
         return res.status(200).json({
             status: 'Success',
             data: allProduk
@@ -103,11 +114,11 @@ const getProdukById = async (req, res) => {
 const createProduk = async (req, res) => {
     try {
         const { nama_produk, harga, deskripsi, kategoriId } = req.body
-        const jwt_payload = req.user.id
+        const jwt_payload = req.user
         if(jwt_payload.profile !== 0) {
-            res.status(400).json({
+            return res.status(400).json({
                 status: 'Error',
-                message: 'Lengkapi profil terlebih dahulu!'
+                message: 'Lengkapi profile terlebih dahulu'
             })
         }
         const foundUser = req.user.id
@@ -115,6 +126,7 @@ const createProduk = async (req, res) => {
         req.files.forEach(element => {
             arrOfGambar.push(element.path)
         });
+       
         const produkData = {
             nama_produk: nama_produk,
             gambar: arrOfGambar,
@@ -123,21 +135,12 @@ const createProduk = async (req, res) => {
             kategoriId: kategoriId,
             userId: foundUser
         }
-        if (produkData.nama_produk === undefined || produkData.gambar.length == 0 || produkData.harga === undefined || produkData.deskripsi === undefined ||produkData.kategoriId === undefined) {
-            return res.status(400).json({
-                status: 'Error',
-                message: 'Lengkapi tabel terlebih dahulu!'
-            })
-        }
         const tambahProduk = await Produk.create(produkData)
         if (tambahProduk) {
             const produk = await Produk.findOne(
                 {
                     where: {
                     id: tambahProduk.id
-                },
-                exclude: {
-                    attributes: ['createdAt', 'updatedAt']
                 },
                 include: {
                     model: model.User,
@@ -153,11 +156,12 @@ const createProduk = async (req, res) => {
     } catch (error) {
         return res.status(500).json({
             status: 'Error',
-            message: 'Internal server error'
+            message: error.message
         })
 
     }
 }
+
 
 const updateProduk = async (req, res) => {
     const id = req.params.id
