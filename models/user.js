@@ -11,16 +11,19 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      this.hasMany(models.Produk, {
-        foreignKey: 'userId',
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE'
-      })
-      this.hasOne(models.Kota, {
-        foreignKey: 'kotaId',
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE'
-      })
+      User.belongsTo(models.Kota, {
+        foreignKey: 'kotaId'
+      });
+      // this.hasMany(models.Produk, {
+      //   foreignKey: 'userId',
+      //   onUpdate: 'CASCADE',
+      //   onDelete: 'CASCADE'
+      // })
+      // this.hasOne(models.Kota, {
+      //   foreignKey: 'kotaId',
+      //   onUpdate: 'CASCADE',
+      //   onDelete: 'CASCADE'
+      // })
     }
   };
   User.init({

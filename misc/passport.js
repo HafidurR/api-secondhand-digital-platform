@@ -14,8 +14,8 @@ passport.use(
         email: jwt_payload.email
       }
     })
-      .then((user) => done(null, user))
-      .catch((err) => done(err, false));
+      .then((user) => done(null, jwt_payload))
+      .catch((err) => done(err, false, { status: "Unauthorized", message: 'Incorrect password/token' }));
   })
 );
 
