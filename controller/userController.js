@@ -122,7 +122,7 @@ const getDetailUser = async (req, res) => {
             include: [
                 {
                     model: Kota,
-                    attributes: ['id', 'nama_kota']
+                    attributes: ['id', 'namaKota']
                 }
             ],
             where: {
@@ -161,7 +161,7 @@ const updateUser = async (req, res) => {
         const { nama, alamat, kotaId, no_telp } = req.body;
         // const hash = await bcrypt.hash(password, 12);
         const updatedData = {
-            nama, alamat, kotaId, no_telp, foto: url
+            nama, alamat, kotaId, noTelp, foto: url
         }
 
         await User.findOne({
