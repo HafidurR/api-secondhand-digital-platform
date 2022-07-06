@@ -87,7 +87,7 @@ const getAll = async (req, res) => {
             include: [
                 {
                     model: Kota,
-                    attributes: ['id', 'nama_kota']
+                    attributes: ['id', 'namaKota']
                 }
             ]
         })
@@ -115,10 +115,10 @@ const getAll = async (req, res) => {
 const updateUser = async (req, res) => {
     try {
         const id = req.params.id;
-        const { nama, alamat, kotaId, no_telp, foto, email } = req.body;
+        const { nama, alamat, kotaId, noTelp, foto, email } = req.body;
         // const hash = await bcrypt.hash(password, 12);
         const updatedData = {
-            nama, alamat, kotaId, no_telp, foto, email
+            nama, alamat, kotaId, noTelp, foto, email
         }
 
         await User.findOne({
