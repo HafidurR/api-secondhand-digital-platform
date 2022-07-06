@@ -1,6 +1,5 @@
-const {User} = require('../models');
-const model = require('../models');
-const {sendEmail} = require('../misc/mailer')
+const { User, Kota } = require('../models');
+const { sendEmail } = require('../misc/mailer')
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
@@ -37,35 +36,175 @@ const register = async (req, res) => {
 const login = async (req, res) => {
     try {
         const { email, password } = req.body;
-        const foundUser = await User.findOne({
-          where: {
-            email: email
-          }
-        });
-        const isValidPassword = bcrypt.compareSync(password, foundUser.password);
-        console.log(isValidPassword)
-        if (isValidPassword) {
-          const payload = {
-            id: foundUser.id,
-            name: foundUser.name,
-            email: foundUser.email
-          };
-          const token = jwt.sign(payload, process.env.JWT_SECRET_KEY, { expiresIn: '1h' });
-          return res.status(200).json({
-            token: token
-          });
+        const foundUser = await User.findOne({ where: { email: email } })
+
+        if (foundUser) {
+            // Check profile
+            const isValidPassword = bcrypt.compareSync(password, foundUser.password);
+            if (isValidPassword) {
+                const checkProfile = foundUser.toJSON()
+                let profile = 0;
+
+                for (const item in checkProfile) {
+                    if (checkProfile[item] === null) profile += 1
+                }
+
+                const payload = {
+                    id: foundUser.id,
+                    name: foundUser.name,
+                    email: foundUser.email,
+                    profile: profile
+                };
+
+                const token = jwt.sign(payload, process.env.JWT_SECRET_KEY, { expiresIn: '1h' });
+
+                return res.status(200).json({
+                    token: token
+                });
+            } else {
+                throw new Error('Wrong email or password')
+            }
+
+        } else {
+            throw new Error('Wrong email or password')
         }
 
     } catch (error) {
         return res.status(400).json({
-          status: 'Failed',
-          message: 'Wrong email or password'
+            status: 'Failed',
+            message: error.message
         });
 
+    }
+
+}
+
+const getAll = async (req, res) => {
+    try {
+        const result = await User.findAll({
+            attributes: ['id', 'nama', 'email', 'alamat'],
+            include: [
+                {
+                    model: Kota,
+                    attributes: ['id', 'namaKota']
+                }
+            ]
+        })
+            .then((result => {
+                return res.status(200).json({
+                    status: 'success',
+                    message: 'success get all user',
+                    data: result
+                })
+            }))
+            .catch((error) => {
+                return res.status(400).json({
+                    status: 'error',
+                    message: error.message
+                })
+            })
+    } catch (error) {
+        return res.status(500).json({
+            status: 'Failed',
+            message: error.message
+        });
+    }
+}
+
+const getDetailUser = async (req, res) => {
+    try {
+        const id = req.params.id;
+        await User.findOne({
+            attributes: ['id', 'nama', 'email', 'alamat', 'foto'],
+            include: [
+                {
+                    model: Kota,
+                    attributes: ['id', 'namaKota']
+                }
+            ],
+            where: {
+                id: id
+            }
+        })
+            .then((rsl => {
+                return res.status(200).json({
+                    status: 'success',
+                    message: 'success get detail',
+                    data: rsl
+                })
+            }))
+            .catch(error => {
+                return res.status(400).json({
+                    status: 'error',
+                    message: error.message
+                })
+            })
+            
+    } catch (error) {
+        return res.status(500).json({
+            status: 'error',
+            message: error.message
+        })
+    }
+
+}
+
+const updateUser = async (req, res) => {
+    try {
+        const id = req.params.id;
+        let url = req.file.path.split('\\')
+        url.shift()
+        url = url.join('/')
+
+        const { nama, alamat, kotaId, noTelp } = req.body;
+        // const hash = await bcrypt.hash(password, 12);
+        const updatedData = {
+            nama, alamat, kotaId, noTelp, foto: url
+        }
+
+        await User.findOne({
+            where: {
+                id: id
+            }
+        })
+            .then(async (rsl) => {
+                if (rsl === null) {
+                    return res.status(404).json({
+                        status: 'error',
+                        message: 'Data not found'
+                    })
+                } else {
+                    await User.update(updatedData, {
+                        where: {
+                            id: id
+                        }
+                    })
+                        .then(() => {
+                            return res.status(200).json({
+                                status: 'success',
+                                message: 'success update user'
+                            })
+                        })
+                        .catch((error) => {
+                            return res.status(400).json({
+                                status: 'error',
+                                message: error.message
+                            })
+                        })
+                }
+            })
+    } catch (error) {
+        return res.status(500).json({
+            status: 'Failed',
+            message: error.message
+        });
     }
 }
 
 module.exports = {
     register,
-    login
+    login,
+    getAll,
+    getDetailUser,
+    updateUser
 }

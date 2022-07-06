@@ -9,7 +9,11 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       kotaId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {         // User belongsTo Kotas 1:1
+          model: 'Kota',
+          key: 'id'
+        }
       },
       nama: {
         type: Sequelize.STRING
@@ -17,7 +21,7 @@ module.exports = {
       alamat: {
         type: Sequelize.TEXT
       },
-      no_telp: {
+      noTelp: {
         type: Sequelize.STRING
       },
       foto: {

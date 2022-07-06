@@ -8,16 +8,34 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      userId: {
-        type: Sequelize.INTEGER
+      sellerId: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {         // User belongsTo User id 1:1
+          model: 'Users',
+          key: 'id'
+        }
+      },
+      buyerId: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {         // User belongsTo User id 1:1
+          model: 'Users',
+          key: 'id'
+        }
       },
       produkId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {         // User belongsTo Produk 1:1
+          model: 'Produks',
+          key: 'id'
+        }
       },
-      status_transaksi: {
+      statusTransaksi: {
         type: Sequelize.STRING
       },
-      harga_jual: {
+      hargaJual: {
         type: Sequelize.STRING
       },
       createdAt: {

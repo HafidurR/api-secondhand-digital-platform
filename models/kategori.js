@@ -11,10 +11,13 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Kategori.hasMany(models.Produk, {
+        foreignKey: 'kategoriId'
+      });
     }
   };
   Kategori.init({
-    nama_kategori: DataTypes.STRING
+    namaKategori: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Kategori',

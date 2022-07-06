@@ -11,23 +11,41 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      this.hasMany(models.Produk, {
-        foreignKey: 'userId',
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE'
-      })
-      this.hasOne(models.Kota, {
-        foreignKey: 'kotaId',
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE'
-      })
+      User.belongsTo(models.Kota, {
+        foreignKey: 'kotaId'
+      });
+      User.hasMany(models.Produk, {
+        foreignKey: 'userId'
+      });
+      // this.hasMany(models.Produk, {
+      //   foreignKey: 'userId',
+      //   onUpdate: 'CASCADE',
+      //   onDelete: 'CASCADE'
+      // })
+      // this.hasOne(models.Kota, {
+      //   foreignKey: 'kotaId',
+      //   onUpdate: 'CASCADE',
+      //   onDelete: 'CASCADE'
+      // })
     }
   };
   User.init({
     kotaId: DataTypes.INTEGER,
-    nama: DataTypes.STRING,
+    nama: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: "nama required",
+        },
+        notEmpty: {
+          args: true,
+          msg: "nama cannot be empty",
+        },
+      },
+    },
     alamat: DataTypes.TEXT,
-    no_telp: DataTypes.STRING,
+    noTelp: DataTypes.STRING,
     foto: DataTypes.STRING,
     email: {
       type: DataTypes.STRING,
@@ -47,7 +65,19 @@ module.exports = (sequelize, DataTypes) => {
         },
       },
     },
-    password: DataTypes.STRING
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: "password required",
+        },
+        notEmpty: {
+          args: true,
+          msg: "password cannot be empty",
+        },
+      },
+    }
   }, {
     sequelize,
     modelName: 'User',
