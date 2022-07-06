@@ -74,7 +74,6 @@ const login = async (req, res) => {
             status: 'Failed',
             message: error.message
         });
-
     }
 
 }
