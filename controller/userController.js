@@ -37,39 +37,39 @@ const register = async (req, res) => {
 const login = async (req, res) => {
     try {
         const { email, password } = req.body;
-        const foundUser = await User.findOne( { where: { email: email } } )
-        
+        const foundUser = await User.findOne({ where: { email: email } })
+
         if (foundUser) {
             // Check profile
             const isValidPassword = bcrypt.compareSync(password, foundUser.password);
-            if(isValidPassword) {
+            if (isValidPassword) {
                 const checkProfile = foundUser.toJSON()
                 let profile = 0;
-    
+
                 for (const item in checkProfile) {
                     if (checkProfile[item] === null) profile += 1
                 }
-    
+
                 const payload = {
                     id: foundUser.id,
                     name: foundUser.name,
                     email: foundUser.email,
                     profile: profile
                 };
-    
+
                 const token = jwt.sign(payload, process.env.JWT_SECRET_KEY, { expiresIn: '1h' });
-                
+
                 return res.status(200).json({
                     token: token
                 });
             } else {
-                throw new Error ('Wrong email or password')
+                throw new Error('Wrong email or password')
             }
-            
+
         } else {
-            throw new Error ('Wrong email or password')
+            throw new Error('Wrong email or password')
         }
-        
+
     } catch (error) {
         return res.status(400).json({
             status: 'Failed',
@@ -95,7 +95,9 @@ const getAll = async (req, res) => {
                 return res.status(200).json({
                     status: 'success',
                     message: 'success get all user',
-                    data: result
+                    data: result.map(d => {
+
+                    })
                 })
             }))
             .catch((error) => {
@@ -112,13 +114,54 @@ const getAll = async (req, res) => {
     }
 }
 
+const getDetailUser = async (req, res) => {
+    try {
+        const id = req.params.id;
+        await User.findOne({
+            attributes: ['id', 'nama', 'email', 'alamat', 'foto'],
+            include: [
+                {
+                    model: Kota,
+                    attributes: ['id', 'nama_kota']
+                }
+            ],
+            where: {
+                id: id
+            }
+        })
+            .then((rsl => {
+                return res.status(200).json({
+                    status: 'success',
+                    message: 'success get detail',
+                    data: rsl
+                })
+            }))
+            .catch(error => {
+                return res.status(400).json({
+                    status: 'error',
+                    message: error.message
+                })
+            })
+    } catch (error) {
+        return res.status(500).json({
+            status: 'error',
+            message: error.message
+        })
+    }
+
+}
+
 const updateUser = async (req, res) => {
     try {
         const id = req.params.id;
-        const { nama, alamat, kotaId, noTelp, foto, email } = req.body;
+        let url = req.file.path.split('\\')
+        url.shift()
+        url = url.join('/')
+
+        const { nama, alamat, kotaId, no_telp } = req.body;
         // const hash = await bcrypt.hash(password, 12);
         const updatedData = {
-            nama, alamat, kotaId, noTelp, foto, email
+            nama, alamat, kotaId, no_telp, foto: url
         }
 
         await User.findOne({
@@ -164,5 +207,6 @@ module.exports = {
     register,
     login,
     getAll,
+    getDetailUser,
     updateUser
 }
