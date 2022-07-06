@@ -87,7 +87,7 @@ const getAll = async (req, res) => {
             include: [
                 {
                     model: Kota,
-                    attributes: ['id', 'nama_kota']
+                    attributes: ['id', 'namaKota']
                 }
             ]
         })

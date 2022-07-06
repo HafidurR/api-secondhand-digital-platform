@@ -24,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Produk.init({
-    nama_produk: DataTypes.STRING,
+    namaProduk: DataTypes.STRING,
     gambar: DataTypes.ARRAY(DataTypes.STRING),
     harga: DataTypes.STRING,
     deskripsi: DataTypes.TEXT,

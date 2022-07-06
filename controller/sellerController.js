@@ -8,7 +8,7 @@ const getAllTransaction = async (req, res) => {
         const options = {
             include: [{
                 model: Produk,
-                attributes: ['nama_produk', 'gambar', 'harga']
+                attributes: ['namaProduk', 'gambar', 'harga']
             }]
         }
         const findTransaction = await Transaksi.findAll(options)
@@ -57,7 +57,7 @@ const updateTransaction = async (req, res) => {
         const jwt_payload = req.user;
         const transactionId = req.params.id
         const { status } = req.body
-        const updateData = { status_transaksi: status }
+        const updateData = { statusTransaksi: status }
         const findTransaction = await Transaksi.findOne({ where: { id: transactionId } })
 
         if(!findTransaction) throw new Error ("Transaction cannot be updated")

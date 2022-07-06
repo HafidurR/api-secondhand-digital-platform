@@ -1,32 +1,24 @@
 const {Produk} = require('../models');
 const model = require('../models');
+const { Op } = require("sequelize");
 
 const getAllProduk = async (req, res) => {
     try {
         let { page, row } = req.query
         page -= 1
         const options = {
-            attributes: ['id', 'nama_produk', 'gambar', 'harga', 'deskripsi', 'kategoriId'],
+            attributes: ['id', 'namaProduk', 'gambar', 'harga', 'deskripsi', 'kategoriId'],
             include: [{
                 model: model.User,
                 attributes: ['nama', 'kotaId']
             }]
         };
         if (page) options.offset = page;
-        if (row) options.offset = row;
+        if (row) options.limit = row;
         const allProduk = await Produk.findAll(options);
-        let dataProduk = {
-            id: allProduk[0].id,
-            namaProduk: allProduk[0].nama_produk,
-            gambar: allProduk[0].gambar,
-            harga: allProduk[0].harga,
-            deskripsi: allProduk[0].deskripsi,
-            kategoriId: allProduk[0].kategoriId,
-            user: allProduk[0].User
-        }
         return res.status(200).json({
             status: 'Success',
-            data: dataProduk
+            data: allProduk
         })
 
     } catch (error) {
@@ -39,40 +31,32 @@ const getAllProduk = async (req, res) => {
 }
 
 const getProdukByNamaProduk = async (req, res) => {
-    let { page, row, nama_produk } = req.query
+    let { page, row, namaProduk } = req.query
     page -= 1
     const options = {
-        attributes: ['id', 'nama_produk', 'gambar', 'harga', 'deskripsi', 'kategoriId'],
+        attributes: ['id', 'namaProduk', 'gambar', 'harga', 'deskripsi', 'kategoriId'],
         include: [{
             model: model.User,
             attributes: ['nama', 'kotaId']
         }],
         where: {
-            nama_produk: nama_produk
+            namaProduk: {
+                [Op.iLike]: '%'+`${namaProduk}`+'%'
+            }
         }
     };
     if (page) options.offset = page;
-    if (row) options.offset = row;
+    if (row) options.limit = row;
     const allProduk = await Produk.findAll(options);
-    let dataProduk = {
-        id: allProduk[0].id,
-        namaProduk: allProduk[0].nama_produk,
-        gambar: allProduk[0].gambar,
-        harga: allProduk[0].harga,
-        deskripsi: allProduk[0].deskripsi,
-        kategoriId: allProduk[0].kategoriId,
-        user: allProduk[0].User
-    }
-    if (allProduk.length == 0) {
+    if (allProduk.length === 0) {
         return res.status(404).json({
             status: 'Error',
             message: 'Pencarian tidak ditemukan'
         }) 
-    }
-    else if (allProduk) {
+    } else if (allProduk) {
         return res.status(200).json({
             status: 'Success',
-            data: dataProduk
+            data: allProduk
         })
     }
 }
@@ -80,7 +64,7 @@ const getProdukByNamaProduk = async (req, res) => {
 const getProdukByKategori = async (req, res) => {
     const kategoriId = req.params.kategoriId
     const options = {
-        attributes: ['id', 'nama_produk', 'gambar', 'harga', 'deskripsi', 'kategoriId'],
+        attributes: ['id', 'namaProduk', 'gambar', 'harga', 'deskripsi', 'kategoriId'],
         include: [{
             model: model.User,
             attributes: ['nama', 'kotaId']
@@ -90,15 +74,6 @@ const getProdukByKategori = async (req, res) => {
         }
     }
     const cariProduk = await Produk.findAll(options)
-    let dataProduk = {
-        id: cariProduk[0].id,
-        namaProduk: cariProduk[0].nama_produk,
-        gambar: cariProduk[0].gambar,
-        harga: cariProduk[0].harga,
-        deskripsi: cariProduk[0].deskripsi,
-        kategoriId: cariProduk[0].kategoriId,
-        user: cariProduk[0].User
-    }
     if (cariProduk.length == 0) {
         return res.status(400).json({
             status: 'Error',
@@ -107,7 +82,7 @@ const getProdukByKategori = async (req, res) => {
     } else if (cariProduk) {
         return res.status(200).json({
             status: 'Success',
-            data: dataProduk
+            data: cariProduk
         })
     } 
 }
@@ -115,7 +90,7 @@ const getProdukByKategori = async (req, res) => {
 const getProdukById = async (req, res) => {
     const id = req.params.id
     const options = {
-        attributes: ['id', 'nama_produk', 'gambar', 'harga', 'deskripsi', 'kategoriId'],
+        attributes: ['id', 'namaProduk', 'gambar', 'harga', 'deskripsi', 'kategoriId'],
         include: [{
             model: model.User,
             attributes: ['nama', 'kotaId']
@@ -123,32 +98,22 @@ const getProdukById = async (req, res) => {
     }
     
     const cariProduk = await Produk.findByPk(id, options)
-    // return console.log(cariProduk.id);
-    let dataProduk = {
-        id: cariProduk.id,
-        namaProduk: cariProduk.nama_produk,
-        gambar: cariProduk.gambar,
-        harga: cariProduk.harga,
-        deskripsi: cariProduk.deskripsi,
-        kategoriId: cariProduk.kategoriId,
-        user: cariProduk.User
-    }
     if (cariProduk) {
         return res.status(200).json({
             status: 'Success',
-            data: dataProduk
+            data: cariProduk
         })
     } else if (!cariProduk) {
-        return res.status(404).json({
+        return res.status(400).json({
             status: 'Error',
-            message: `Produk dengan id ${req.params.id} tidak ditemukan`
+            message: `Produk dengan kategori ${req.params.kategoriId} tidak ditemukan`
         })
     } 
 }
 
 const createProduk = async (req, res) => {
     try {
-        const { nama_produk, harga, deskripsi, kategoriId } = req.body
+        const { namaProduk, harga, deskripsi, kategoriId } = req.body
         const jwt_payload = req.user
         if(jwt_payload.profile !== 0) {
             return res.status(400).json({
@@ -163,7 +128,7 @@ const createProduk = async (req, res) => {
         });
        
         const produkData = {
-            nama_produk: nama_produk,
+            namaProduk: namaProduk,
             gambar: arrOfGambar,
             harga: harga,
             deskripsi: deskripsi,
@@ -200,7 +165,7 @@ const createProduk = async (req, res) => {
 
 const updateProduk = async (req, res) => {
     const id = req.params.id
-    const {nama_produk, harga, deskripsi, kategoriId} = req.body
+    const {namaProduk, harga, deskripsi, kategoriId} = req.body
     const arrOfGambar = []
     req.files.forEach(element => {
         arrOfGambar.push(element.path)
@@ -216,8 +181,8 @@ const updateProduk = async (req, res) => {
             message: `Produk dengan id ${req.params.id} tidak ditemukan`
         })
     }
-    if (nama_produk) {
-        cariProduk.nama_produk = nama_produk
+    if (namaProduk) {
+        cariProduk.namaProduk = namaProduk
     } 
     if (harga) {
         cariProduk.harga = harga
@@ -236,7 +201,7 @@ const updateProduk = async (req, res) => {
         res.status(200).json({
             status: 'success',
             data: {
-                nama_produk: cariProduk.nama_produk,
+                namaProduk: cariProduk.namaProduk,
                 gambar: cariProduk.gambar,
                 harga: cariProduk.harga,
                 deskripsi: cariProduk.deskripsi,

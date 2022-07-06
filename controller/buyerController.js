@@ -28,7 +28,7 @@ const getAllBuyerTransaction = async (req, res) => {
 
 const createBuyerTransaction = async (req, res) => {
     try {
-        const { produkId, harga_tawar } = req.body 
+        const { produkId, hargaTawar } = req.body 
         const jwt_payload = req.user //catch token from passport.js middleware
         const findTransaction = await Transaksi.findOne({
             where: {
@@ -48,8 +48,8 @@ const createBuyerTransaction = async (req, res) => {
                 buyerId: jwt_payload.id,
                 sellerId: findProduct.userId,
                 produkId: produkId,
-                status_transaksi: "pending",
-                harga_jual: harga_tawar
+                statusTransaksi: "pending",
+                hargaJual: hargaTawar
             }
             const createTransaction = await Transaksi.create(transactionData)
 
@@ -78,10 +78,10 @@ const getBuyerTransactionById = async (req, res) => {
         const transactionId = req.params.id
         const options = {
             where: { id: transactionId },
-            attributes: ['id','userId', 'produkId', 'status_transaksi', 'harga_jual'],
+            attributes: ['id','userId', 'produkId', 'statusTransaksi', 'hargaJual'],
             include: [{
                 model: Produk,
-                attributes: ['nama_produk', 'gambar', 'harga']
+                attributes: ['namaProduk', 'gambar', 'harga']
             }]
         }
         const findTransaction = await Transaksi.findOne(options)
@@ -101,7 +101,7 @@ const getBuyerTransactionById = async (req, res) => {
 
 const updateBuyerTransaction = async (req, res) => {
     try {
-        const { harga_tawar } = req.body
+        const { hargaTawar } = req.body
         const id = req.params.id
         const jwt_payload = req.user
         const options = {
@@ -109,7 +109,7 @@ const updateBuyerTransaction = async (req, res) => {
         }
         const findTransaction = await Transaksi.findOne(options)
         if(!findTransaction) throw new Error ("Transaksi tidak ditemukan")
-        const updatedData = { harga_jual: harga_tawar }
+        const updatedData = { hargaJual: hargaTawar }
         const updateHargaTawar = await Transaksi.update(updatedData, options)
 
         await findTransaction.reload()

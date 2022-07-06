@@ -18,6 +18,7 @@
     "multer": "^1.4.5-lts.1",
     "nodemailer": "^6.7.5",
     "nodemon": "^2.0.15",
+    "op": "^0.0.6",
     "passport": "^0.6.0",
     "passport-jwt": "^4.0.0",
     "pg": "^8.7.3",

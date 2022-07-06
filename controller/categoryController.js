@@ -4,7 +4,7 @@ const { Kategori } = require('../models');
 const getAll = async (req, res) => {
   try {
     await Kategori.findAll({
-      attributes: ['id', 'nama_kategori']
+      attributes: ['id', 'namaKategori']
     })
       .then((result) => {
         return res.status(200).json({
@@ -30,7 +30,7 @@ const getAll = async (req, res) => {
 const create = async (req, res) => {
   try {
     await Kategori.create({
-      nama_kategori: req.body.nama_kategori
+      namaKategori: req.body.namaKategori
     })
       .then((result) => {
         return res.status(201).json({
@@ -69,7 +69,7 @@ const update = async (req, res) => {
         })
       } else {
         await Kategori.update({
-          nama_kategory: req.body.nama_kategori
+          namaKategory: req.body.namaKategori
         }, {
           where: {
             id: id

@@ -21,7 +21,7 @@ module.exports = {
       alamat: {
         type: Sequelize.TEXT
       },
-      no_telp: {
+      noTelp: {
         type: Sequelize.STRING
       },
       foto: {
