@@ -2,6 +2,7 @@ const { User, Kota } = require('../models');
 const { sendEmail } = require('../misc/mailer')
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const BASE_URL = process.env.BASE_URL;
 
 const register = async (req, res) => {
     try {
@@ -126,11 +127,26 @@ const getDetailUser = async (req, res) => {
             }
         })
             .then((rsl => {
-                return res.status(200).json({
-                    status: 'success',
-                    message: 'success get detail',
-                    data: rsl
-                })
+                if (rsl === null) {
+                    return res.status(404).json({
+                        status: 'error',
+                        message: 'Data not found'
+                    })
+                } else {
+                    return res.status(200).json({
+                        status: 'success',
+                        message: 'success get detail',
+                        data:  
+                        {
+                            id: rsl.id,
+                            nama: rsl.nama,
+                            email: rsl.email,
+                            alamat: rsl.alamat,
+                            foto: `${BASE_URL}` + '/' + rsl.foto,
+                            Kota: rsl.Kotum
+                        }
+                    })
+                }
             }))
             .catch(error => {
                 return res.status(400).json({
@@ -138,7 +154,7 @@ const getDetailUser = async (req, res) => {
                     message: error.message
                 })
             })
-            
+
     } catch (error) {
         return res.status(500).json({
             status: 'error',
@@ -151,14 +167,14 @@ const getDetailUser = async (req, res) => {
 const updateUser = async (req, res) => {
     try {
         const id = req.params.id;
-        let url = req.file.path.split('\\')
-        url.shift()
-        url = url.join('/')
+        const url = req.file.path.split('/')
+        url.shift();
+        const urlImage = url.join('/');
 
         const { nama, alamat, kotaId, noTelp } = req.body;
         // const hash = await bcrypt.hash(password, 12);
         const updatedData = {
-            nama, alamat, kotaId, noTelp, foto: url
+            nama, alamat, kotaId, noTelp, foto: urlImage
         }
 
         await User.findOne({
