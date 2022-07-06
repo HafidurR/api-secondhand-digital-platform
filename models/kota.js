@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       // this.belongsTo(models.User, {
       //   foreignKey: 'kotaId'
       // })
-      Kota.belongsTo(models.User, {
+      Kota.hasMany(models.User, {
         foreignKey: 'kotaId' 
       });
     }
