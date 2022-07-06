@@ -152,14 +152,12 @@ const getDetailUser = async (req, res) => {
 const updateUser = async (req, res) => {
     try {
         const id = req.params.id;
-        let url = req.file.path.split('\\')
-        url.shift()
-        url = url.join('/')
+        let url = req.file.path
 
-        const { nama, alamat, kotaId, noTelp } = req.body;
+        const { nama, alamat, kotaId, noTelp, foto } = req.body;
         // const hash = await bcrypt.hash(password, 12);
         const updatedData = {
-            nama, alamat, kotaId, noTelp, foto: url
+            nama, alamat, kotaId, noTelp, foto
         }
 
         await User.findOne({
