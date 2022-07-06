@@ -139,6 +139,7 @@ const getDetailUser = async (req, res) => {
                     message: error.message
                 })
             })
+            
     } catch (error) {
         return res.status(500).json({
             status: 'error',
