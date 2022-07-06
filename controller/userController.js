@@ -95,9 +95,7 @@ const getAll = async (req, res) => {
                 return res.status(200).json({
                     status: 'success',
                     message: 'success get all user',
-                    data: result.map(d => {
-
-                    })
+                    data: result
                 })
             }))
             .catch((error) => {
@@ -158,7 +156,7 @@ const updateUser = async (req, res) => {
         url.shift()
         url = url.join('/')
 
-        const { nama, alamat, kotaId, no_telp } = req.body;
+        const { nama, alamat, kotaId, noTelp } = req.body;
         // const hash = await bcrypt.hash(password, 12);
         const updatedData = {
             nama, alamat, kotaId, noTelp, foto: url

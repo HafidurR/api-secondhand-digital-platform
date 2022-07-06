@@ -14,6 +14,9 @@ module.exports = (sequelize, DataTypes) => {
       User.belongsTo(models.Kota, {
         foreignKey: 'kotaId'
       });
+      User.hasMany(models.Produk, {
+        foreignKey: 'userId'
+      });
       // this.hasMany(models.Produk, {
       //   foreignKey: 'userId',
       //   onUpdate: 'CASCADE',
