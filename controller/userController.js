@@ -2,7 +2,6 @@ const { User, Kota } = require('../models');
 const { sendEmail } = require('../misc/mailer')
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const e = require('express');
 
 const register = async (req, res) => {
     try {
