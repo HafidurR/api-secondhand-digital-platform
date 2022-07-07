@@ -25,13 +25,19 @@ const getAllProduk = async (req, res) => {
         }
         if (kategoriId) options.where.kategoriId = kategoriId
         const allProduk = await Produk.findAll(options);
-        return res.status(200).json({
-            status: 'Success',
-            data: allProduk
-        })
-
+        if (allProduk.length === 0) {
+            return res.status(400).json({
+                status: 'Error',
+                data: 'Pencarian tidak ditemukan'
+            })
+        } else if (allProduk) {
+            return res.status(200).json({
+                status: 'Success',
+                data: allProduk
+            })
+        }
     } catch (error) {
-        return res.status(500).json({
+        return res.status(404).json({
             status: "Bad Request",
             data: error.message
         })
