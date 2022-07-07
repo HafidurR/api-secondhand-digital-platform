@@ -1,6 +1,7 @@
 const {Produk} = require('../models');
 const model = require('../models');
 const { Op } = require("sequelize");
+const BASE_URL = process.env.BASE_URL;
 
 const getAllProduk = async (req, res) => {
     try {
@@ -124,9 +125,9 @@ const createProduk = async (req, res) => {
         const foundUser = req.user.id
         const arrOfGambar = []
         req.files.forEach(element => {
-            arrOfGambar.push(element.path)
+            arrOfGambar.push(`${BASE_URL}` + '/' + element.path)
         });
-       
+        
         const produkData = {
             namaProduk: namaProduk,
             gambar: arrOfGambar,
@@ -168,7 +169,7 @@ const updateProduk = async (req, res) => {
     const {namaProduk, harga, deskripsi, kategoriId} = req.body
     const arrOfGambar = []
     req.files.forEach(element => {
-        arrOfGambar.push(element.path)
+        arrOfGambar.push(`${BASE_URL}` + '/' + element.path)
     })
     const cariProduk = await Produk.findOne({
         where: {
