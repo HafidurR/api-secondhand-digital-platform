@@ -5,17 +5,25 @@ const BASE_URL = process.env.BASE_URL;
 
 const getAllProduk = async (req, res) => {
     try {
-        let { page, row } = req.query
+        let { page, row, namaProduk, kategoriId } = req.query
+        const isPublish = true
         page -= 1
         const options = {
             attributes: ['id', 'namaProduk', 'gambar', 'harga', 'deskripsi', 'kategoriId'],
             include: [{
                 model: model.User,
                 attributes: ['nama', 'kotaId']
-            }]
+            }],
+            where: {
+                isPublish
+            }
         };
         if (page) options.offset = page;
         if (row) options.limit = row;
+        if (namaProduk) options.where.namaProduk = {
+            [Op.iLike]: '%'+`${namaProduk}`+'%'
+        }
+        if (kategoriId) options.where.kategoriId = kategoriId
         const allProduk = await Produk.findAll(options);
         return res.status(200).json({
             status: 'Success',
@@ -29,63 +37,6 @@ const getAllProduk = async (req, res) => {
         })
     }
 
-}
-
-const getProdukByNamaProduk = async (req, res) => {
-    let { page, row, namaProduk } = req.query
-    page -= 1
-    const options = {
-        attributes: ['id', 'namaProduk', 'gambar', 'harga', 'deskripsi', 'kategoriId'],
-        include: [{
-            model: model.User,
-            attributes: ['nama', 'kotaId']
-        }],
-        where: {
-            namaProduk: {
-                [Op.iLike]: '%'+`${namaProduk}`+'%'
-            }
-        }
-    };
-    if (page) options.offset = page;
-    if (row) options.limit = row;
-    const allProduk = await Produk.findAll(options);
-    if (allProduk.length === 0) {
-        return res.status(404).json({
-            status: 'Error',
-            message: 'Pencarian tidak ditemukan'
-        }) 
-    } else if (allProduk) {
-        return res.status(200).json({
-            status: 'Success',
-            data: allProduk
-        })
-    }
-}
-
-const getProdukByKategori = async (req, res) => {
-    const kategoriId = req.params.kategoriId
-    const options = {
-        attributes: ['id', 'namaProduk', 'gambar', 'harga', 'deskripsi', 'kategoriId'],
-        include: [{
-            model: model.User,
-            attributes: ['nama', 'kotaId']
-        }],
-        where: {
-            kategoriId
-        }
-    }
-    const cariProduk = await Produk.findAll(options)
-    if (cariProduk.length == 0) {
-        return res.status(400).json({
-            status: 'Error',
-            message: `Produk dengan kategori ${req.params.kategoriId} tidak ditemukan`
-        })
-    } else if (cariProduk) {
-        return res.status(200).json({
-            status: 'Success',
-            data: cariProduk
-        })
-    } 
 }
 
 const getProdukById = async (req, res) => {
@@ -124,8 +75,10 @@ const createProduk = async (req, res) => {
         }
         const foundUser = req.user.id
         const arrOfGambar = []
-        req.files.forEach(element => {
-            arrOfGambar.push(`${BASE_URL}` + '/' + element.path)
+        req.files.forEach((element) => {
+            const e = element.path.split('\\')
+            const urlImage = e[0]+'/'+e[1]
+            arrOfGambar.push(`${BASE_URL}` + '/' + urlImage)
         });
         
         const produkData = {
@@ -163,13 +116,68 @@ const createProduk = async (req, res) => {
     }
 }
 
+const createProdukTerbitkan = async (req, res) => {
+    try {
+        const { namaProduk, harga, deskripsi, kategoriId } = req.body
+        const jwt_payload = req.user
+        if(jwt_payload.profile !== 0) {
+            return res.status(400).json({
+                status: 'Error',
+                message: 'Lengkapi profile terlebih dahulu'
+            })
+        }
+        const foundUser = req.user.id
+        const arrOfGambar = []
+        req.files.forEach((element) => {
+            const e = element.path.split('\\')
+            const urlImage = e[0]+'/'+e[1]
+            arrOfGambar.push(`${BASE_URL}` + '/' + urlImage)
+        });
+        const isPublishTrue = true    
+        const produkData = {
+            namaProduk: namaProduk,
+            gambar: arrOfGambar,
+            harga: harga,
+            deskripsi: deskripsi,
+            kategoriId: kategoriId,
+            userId: foundUser,
+            isPublish: isPublishTrue
+        }
+        const tambahProduk = await Produk.create(produkData)
+        if (tambahProduk) {
+            const produk = await Produk.findOne(
+                {
+                    where: {
+                    id: tambahProduk.id
+                },
+                include: {
+                    model: model.User,
+                    attributes: ['nama', 'kotaId']
+                }
+            }
+            )
+            return res.status(201).json({
+                status: 'Success',
+                data: produk
+            }) 
+        }
+    } catch (error) {
+        return res.status(500).json({
+            status: 'Error',
+            message: error.message
+        })
+
+    }
+}
 
 const updateProduk = async (req, res) => {
     const id = req.params.id
     const {namaProduk, harga, deskripsi, kategoriId} = req.body
     const arrOfGambar = []
     req.files.forEach(element => {
-        arrOfGambar.push(`${BASE_URL}` + '/' + element.path)
+        const e = element.path.split('\\')
+        const urlImage = e[0]+'/'+e[1]
+        arrOfGambar.push(`${BASE_URL}` + '/' + urlImage)
     })
     const cariProduk = await Produk.findOne({
         where: {
@@ -212,7 +220,7 @@ const updateProduk = async (req, res) => {
     } else {
         res.status(400).json({
             status: 'error',
-            message: error
+            message: error.message
         })
     }
 }
@@ -259,11 +267,12 @@ const deleteProduk = async(req, res) => {
 
 module.exports = {
     getAllProduk,
-    getProdukByNamaProduk,
-    getProdukByKategori,
+    // getProdukByNamaProduk,
+    // getProdukByKategori,
     createProduk,
     updateProduk,
     deleteProduk,
     getProdukById,
-    isPublish
+    isPublish,
+    createProdukTerbitkan
 }
