@@ -104,6 +104,7 @@ const getAll = async (req, res) => {
                 })
             })
     } catch (error) {
+ 
         return res.status(500).json({
             status: 'Failed',
             message: error.message
