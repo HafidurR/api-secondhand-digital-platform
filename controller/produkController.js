@@ -90,11 +90,6 @@ const createProduk = async (req, res) => {
             const newPath = await uploader(path)
             arrOfGambar.push(newPath)
         }
-        // req.files.forEach(element => {
-        //     // const e = element.path.split('\\')
-        //     // const urlImage = e[0]+'/'+e[1]
-        //     arrOfGambar.push(`${BASE_URL}` + '/' + urlImage)
-        // });
         const produkData = {
             namaProduk: namaProduk,
             gambar: arrOfGambar,
