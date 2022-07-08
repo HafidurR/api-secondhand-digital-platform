@@ -116,7 +116,7 @@ const getDetailUser = async (req, res) => {
     try {
         const id = req.params.id;
         await User.findOne({
-            attributes: ['id', 'nama', 'email', 'alamat', 'foto'],
+            attributes: ['id', 'nama', 'email', 'alamat', 'foto', 'noTelp'],
             include: [
                 {
                     model: Kota,
@@ -143,7 +143,7 @@ const getDetailUser = async (req, res) => {
                             nama: rsl.nama,
                             email: rsl.email,
                             alamat: rsl.alamat,
-                            foto: `${BASE_URL}` + '/' + rsl.foto,
+                            foto: rsl.foto,
                             Kota: rsl.Kotum
                         }
                     })
@@ -168,14 +168,10 @@ const getDetailUser = async (req, res) => {
 const updateUser = async (req, res) => {
     try {
         const id = req.params.id;
-        const url = req.file.path.split('/')
-        url.shift();
-        const urlImage = url.join('/');
-
-        const { nama, alamat, kotaId, noTelp } = req.body;
+        const { nama, alamat, kotaId, noTelp, foto_url } = req.body;
         // const hash = await bcrypt.hash(password, 12);
         const updatedData = {
-            nama, alamat, kotaId, noTelp, foto: urlImage
+            nama, alamat, kotaId, noTelp, foto: foto_url
         }
 
         await User.findOne({
