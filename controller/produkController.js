@@ -157,6 +157,7 @@ const createProdukTerbitkan = async (req, res) => {
             userId: foundUser,
             isPublish: isPublishTrue
         }
+        
         const tambahProduk = await Produk.create(produkData)
         if (tambahProduk) {
             const produk = await Produk.findOne(
