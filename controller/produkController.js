@@ -1,7 +1,7 @@
 const {Produk} = require('../models');
 const model = require('../models');
 const { Op } = require("sequelize");
-const BASE_URL = process.env.BASE_URL;
+const cloudinary = require('../misc/cloudinaryProduk')
 
 const getAllProduk = async (req, res) => {
     try {
@@ -71,6 +71,7 @@ const getProdukById = async (req, res) => {
 
 const createProduk = async (req, res) => {
     try {
+        const uploader = async (path) => await cloudinary.uploads(path, 'Gambar')
         const { namaProduk, harga, deskripsi, kategoriId } = req.body
         const jwt_payload = req.user
         if(jwt_payload.profile !== 0) {
@@ -82,12 +83,12 @@ const createProduk = async (req, res) => {
         
         const foundUser = req.user.id
         const arrOfGambar = []
-        req.files.forEach((element) => {
-            const e = element.path.split('\\')
-            const urlImage = e[0]+'/'+e[1]
-            arrOfGambar.push(`${BASE_URL}` + '/' + urlImage)
-        });
-        
+        const files = req.files
+        for (const file of files) {
+            const {path} = file
+            const newPath = await uploader(path)
+            arrOfGambar.push(newPath)
+        }
         const produkData = {
             namaProduk: namaProduk,
             gambar: arrOfGambar,
@@ -125,6 +126,7 @@ const createProduk = async (req, res) => {
 
 const createProdukTerbitkan = async (req, res) => {
     try {
+        const uploader = async (path) => await cloudinary.uploads(path, 'Gambar')
         const { namaProduk, harga, deskripsi, kategoriId } = req.body
         const jwt_payload = req.user
         if(jwt_payload.profile !== 0) {
@@ -135,11 +137,12 @@ const createProdukTerbitkan = async (req, res) => {
         }
         const foundUser = req.user.id
         const arrOfGambar = []
-        req.files.forEach((element) => {
-            const e = element.path.split('\\')
-            const urlImage = e[0]+'/'+e[1]
-            arrOfGambar.push(`${BASE_URL}` + '/' + urlImage)
-        });
+        const files = req.files
+        for (const file of files) {
+            const {path} = file
+            const newPath = await uploader(path)
+            arrOfGambar.push(newPath)
+        }
         const isPublishTrue = true    
         const produkData = {
             namaProduk: namaProduk,
@@ -180,13 +183,15 @@ const createProdukTerbitkan = async (req, res) => {
 
 const updateProduk = async (req, res) => {
     const id = req.params.id
+    const uploader = async (path) => await cloudinary.uploads(path, 'Gambar')
     const {namaProduk, harga, deskripsi, kategoriId} = req.body
     const arrOfGambar = []
-    req.files.forEach(element => {
-        const e = element.path.split('\\')
-        const urlImage = e[0]+'/'+e[1]
-        arrOfGambar.push(`${BASE_URL}` + '/' + urlImage)
-    })
+    const files = req.files
+    for (const file of files) {
+        const {path} = file
+        const newPath = await uploader(path)
+        arrOfGambar.push(newPath)
+    }
     const cariProduk = await Produk.findOne({
         where: {
             id
@@ -275,8 +280,6 @@ const deleteProduk = async(req, res) => {
 
 module.exports = {
     getAllProduk,
-    // getProdukByNamaProduk,
-    // getProdukByKategori,
     createProduk,
     updateProduk,
     deleteProduk,
