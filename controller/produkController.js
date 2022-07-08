@@ -79,6 +79,7 @@ const createProduk = async (req, res) => {
                 message: 'Lengkapi profile terlebih dahulu'
             })
         }
+        
         const foundUser = req.user.id
         const arrOfGambar = []
         req.files.forEach((element) => {
