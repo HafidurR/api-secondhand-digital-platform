@@ -45,7 +45,23 @@ module.exports = (sequelize, DataTypes) => {
       },
     },
     alamat: DataTypes.TEXT,
-    noTelp: DataTypes.STRING,
+    noTelp: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: "No handphone required",
+        },
+        notEmpty: {
+          args: true,
+          msg: "No handphone cannot be empty",
+        },
+        len: {
+          args: [11, 15],
+          msg: "The no handphone length should be between 11 and 15 characters."
+        }
+      },
+    },
     foto: DataTypes.STRING,
     email: {
       type: DataTypes.STRING,

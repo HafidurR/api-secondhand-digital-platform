@@ -115,7 +115,7 @@ const getDetailUser = async (req, res) => {
     try {
         const id = req.params.id;
         await User.findOne({
-            attributes: ['id', 'nama', 'email', 'alamat', 'foto'],
+            attributes: ['id', 'nama', 'email', 'alamat', 'foto', 'noTelp'],
             include: [
                 {
                     model: Kota,
@@ -142,6 +142,7 @@ const getDetailUser = async (req, res) => {
                             nama: rsl.nama,
                             email: rsl.email,
                             alamat: rsl.alamat,
+                            noTelp: rsl.noTelp,
                             foto: `${BASE_URL}` + '/' + rsl.foto,
                             Kota: rsl.Kotum
                         }
