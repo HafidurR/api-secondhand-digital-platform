@@ -90,6 +90,7 @@ const getAll = async (req, res) => {
                 }
             ]
         })
+        
             .then((result => {
                 return res.status(200).json({
                     status: 'success',
@@ -143,7 +144,8 @@ const getDetailUser = async (req, res) => {
                             nama: rsl.nama,
                             email: rsl.email,
                             alamat: rsl.alamat,
-                            foto: rsl.foto,
+                            noTelp: rsl.noTelp,
+                            foto: `${BASE_URL}` + '/' + rsl.foto,
                             Kota: rsl.Kotum
                         }
                     })
