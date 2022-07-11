@@ -145,7 +145,7 @@ const getDetailUser = async (req, res) => {
                             email: rsl.email,
                             alamat: rsl.alamat,
                             noTelp: rsl.noTelp,
-                            foto: `${BASE_URL}` + '/' + rsl.foto,
+                            foto: rsl.foto,
                             Kota: rsl.Kotum
                         }
                     })
