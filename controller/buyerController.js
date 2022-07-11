@@ -78,7 +78,7 @@ const getBuyerTransactionById = async (req, res) => {
         const transactionId = req.params.id
         const options = {
             where: { id: transactionId },
-            attributes: ['id','userId', 'produkId', 'statusTransaksi', 'hargaJual'],
+            attributes: ['id','buyerId', 'sellerId', 'produkId', 'statusTransaksi', 'hargaJual'],
             include: [{
                 model: Produk,
                 attributes: ['namaProduk', 'gambar', 'harga']
