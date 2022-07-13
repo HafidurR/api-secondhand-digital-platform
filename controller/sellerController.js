@@ -62,14 +62,32 @@ const updateTransaction = async (req, res) => {
 
         if(!findTransaction) throw new Error ("Transaction cannot be updated")
         await Transaksi.update(updateData, { where: { id: transactionId } })
-        findTransaction.reload()
-        return res.status(201).json({
-            status: "Success",
-            message: findTransaction
-        })
+        // findTransaction.reload()
+        .then(async () => {
+            await Transaksi.findOne({
+              where: {
+                id: transactionId
+              }
+            })
+              .then(rsl => {
+                return res.status(200).json({
+                  message: 'Success',
+                  Data: rsl
+                })
+              }).catch(err => {
+                return res.status(400).json({
+                  message: err.message
+                })
+              })
+          })
+          .catch((error) => {
+            return res.status(400).json({
+              status: 'Error',
+              message: error.message
+            })
+          })
     } catch (error) {
-
-        return res.status(404).json({
+        return res.status(500).json({
             status: "Failed",
             message: error.message
         })
