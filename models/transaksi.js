@@ -14,6 +14,12 @@ module.exports = (sequelize, DataTypes) => {
       Transaksi.belongsTo(models.Produk, {
         foreignKey: `produkId`
       })
+      Transaksi.belongsTo(models.User, {
+        foreignKey: `sellerId`
+      })
+      Transaksi.belongsTo(models.User, {
+        foreignKey: `buyerId`
+      })
     }
   };
   Transaksi.init({
