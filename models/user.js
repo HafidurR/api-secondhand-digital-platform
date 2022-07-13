@@ -17,6 +17,13 @@ module.exports = (sequelize, DataTypes) => {
       User.hasMany(models.Produk, {
         foreignKey: 'userId'
       });
+      User.hasMany(models.Transaksi, {
+        foreignKey: 'sellerId'
+      });
+      User.hasMany(models.Transaksi, {
+        foreignKey: 'buyerId'
+      });
+
       // this.hasMany(models.Produk, {
       //   foreignKey: 'userId',
       //   onUpdate: 'CASCADE',
