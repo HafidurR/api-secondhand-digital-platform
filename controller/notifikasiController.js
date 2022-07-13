@@ -35,6 +35,9 @@ const getNotificationById = async (req, res) => {
             include: [{
                 model: Produk,
                 attributes: ['namaProduk', 'gambar', 'harga']
+            },{
+                model: User,
+                attributes: ['foto', 'nama']
             }],
             where: [{
                 statusTransaksi
