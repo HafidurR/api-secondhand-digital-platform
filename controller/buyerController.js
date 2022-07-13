@@ -31,10 +31,11 @@ const createBuyerTransaction = async (req, res) => {
         const { produkId, hargaTawar } = req.body 
         const jwt_payload = req.user //catch token from passport.js middleware
         const findTransaction = await Transaksi.findOne({
-            where: {
-                buyerId: jwt_payload.id,
+            where: [{
+                buyerId: jwt_payload.id
+            },{
                 produkId: produkId
-            }
+            }]
         });
         const findProduct = await Produk.findOne({
             where: {
@@ -43,7 +44,7 @@ const createBuyerTransaction = async (req, res) => {
         })
         if(jwt_payload.id === findProduct.userId) throw new Error ("Transaction cannot be done ")
         // return console.log(findProduct);
-        if(findTransaction === null) {
+        if(findTransaction === null || findTransaction) {
             const transactionData = {
                 buyerId: jwt_payload.id,
                 sellerId: findProduct.userId,
@@ -57,13 +58,7 @@ const createBuyerTransaction = async (req, res) => {
                 status: "Success",
                 message: "Sukses membuat transaksi"
             })
-        } else {
-            return res.status(400).json({
-                status: "Bad Request",
-                message: "Transaksi telah dibuat"
-            })
         }
-        
     } catch (error) {
         return res.status(500).json({
             status: "Bad Request",
@@ -85,9 +80,8 @@ const getBuyerTransactionById = async (req, res) => {
             }]
         }
         const findTransaction = await Transaksi.findOne(options)
-
-        if(findTransaction === null || findTransaction.userId !== jwt_payload.id) throw new Error ('Id transaksi salah')
-        return res.status(201).json({
+        if(findTransaction === null || findTransaction.buyerId !== jwt_payload.id) throw new Error ('Id transaksi salah')
+        return res.status(200).json({
             status: "Success",
             message: findTransaction
         })
@@ -103,12 +97,22 @@ const updateBuyerTransaction = async (req, res) => {
     try {
         const { hargaTawar } = req.body
         const id = req.params.id
-        const jwt_payload = req.user
+        const jwt_payload = req.user.id
         const options = {
-            where: { id: id }
+            where: [{ 
+                buyerId: jwt_payload 
+            },{
+                id: id
+            }]
         }
         const findTransaction = await Transaksi.findOne(options)
         if(!findTransaction) throw new Error ("Transaksi tidak ditemukan")
+        if (findTransaction.statusTransaksi === 'accepted') {
+            return res.status(400).json({
+                status: 'Error',
+                message: 'Transaksi sudah selesai'
+            })
+        }
         const updatedData = { hargaJual: hargaTawar }
         const updateHargaTawar = await Transaksi.update(updatedData, options)
 
@@ -136,7 +140,7 @@ const deleteBuyerTransaction = async (req, res) => {
                 userId: jwt_payload.id
             }
         })
-        if(findTransaction[0] === undefined) throw new Error('Transasi tidak ditemukan');
+        if(findTransaction[0] === undefined) throw new Error('Transaksi tidak ditemukan');
         const deleteTransaction = await Transaksi.destroy({ 
             where: { id: transactionId, userId: jwt_payload.id } 
         })
