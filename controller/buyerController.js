@@ -7,7 +7,7 @@ const getAllBuyerTransaction = async (req, res) => {
     try{
         const jwt_payload = req.user //catch token from passport.js middleware
         const options = {
-            where : {id: jwt_payload.id},
+            where : { id: jwt_payload.id },
             attributes: { exclude: ['createdAt, updatedAt'] }
         }
         const findTransaction = await Transaksi.findAll()
@@ -29,7 +29,7 @@ const getAllBuyerTransaction = async (req, res) => {
 const createBuyerTransaction = async (req, res) => {
     try {
         const { produkId, hargaTawar } = req.body 
-        const jwt_payload = req.user //catch token from passport.js middleware
+        const jwt_payload = req.user // catch token from passport.js middleware
         const findTransaction = await Transaksi.findOne({
             where: [{
                 buyerId: jwt_payload.id
