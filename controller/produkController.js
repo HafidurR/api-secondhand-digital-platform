@@ -231,6 +231,7 @@ const updateProduk = async (req, res) => {
     const {namaProduk, harga, deskripsi, kategoriId} = req.body
     const arrOfGambar = []
     const files = req.files
+    
     for (const file of files) {
         const {path} = file
         const newPath = await uploader(path)
