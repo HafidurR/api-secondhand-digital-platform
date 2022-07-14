@@ -45,57 +45,13 @@ const getAllProduk = async (req, res) => {
 
 }
 
-const getAllProdukFalse = async (req, res) => {
-    try {
-        let { page, row, namaProduk, kategoriId } = req.query
-        const isPublish = false
-        const userId = req.user.id
-        page -= 1
-        const options = {
-            attributes: ['id', 'namaProduk', 'gambar', 'harga', 'deskripsi', 'kategoriId'],
-            include: [{
-                model: model.User,
-                attributes: ['nama', 'kotaId']
-            }],
-            where: [{
-                isPublish
-            },{
-                userId
-            }]
-        };
-        if (page) options.offset = page;
-        if (row) options.limit = row;
-        if (namaProduk) options.where.namaProduk = {
-            [Op.iLike]: '%'+`${namaProduk}`+'%'
-        }
-        if (kategoriId) options.where.kategoriId = kategoriId
-        const allProduk = await Produk.findAll(options);
-        if (allProduk.length === 0) {
-            return res.status(400).json({
-                status: 'Error',
-                data: 'Pencarian tidak ditemukan'
-            })
-        } else if (allProduk) {
-            return res.status(200).json({
-                status: 'Success',
-                data: allProduk
-            })
-        }
-    } catch (error) {
-        return res.status(404).json({
-            status: "Bad Request",
-            data: error.message
-        })
-    }
-}
-
 const getProdukById = async (req, res) => {
     const id = req.params.id
     const options = {
         attributes: ['id', 'namaProduk', 'gambar', 'harga', 'deskripsi', 'kategoriId'],
         include: [{
             model: model.User,
-            attributes: ['nama', 'kotaId']
+            attributes: ['id', 'nama', 'kotaId', 'foto']
         }]
     }
     
@@ -305,6 +261,28 @@ const isPublish = async(req, res) => {
     })
 }
 
+const isPublishFalse = async(req, res) => {
+    const id = req.params.id
+    const isPublish = req.body
+    const update = await Produk.update(isPublish,{
+        where: {
+            id
+        }
+    })
+    .then (result => {
+        return res.status(200).json({
+            status: 'Success',
+            message: 'Terjual'
+        })
+    }) 
+    .catch (error => {
+        return res.status(500).json({
+            status: 'Error',
+            message: error.message
+        })
+    })
+}
+
 const deleteProduk = async(req, res) => {
     const {id} = req.params
     const cariProduk = await Produk.findByPk(id)
@@ -325,7 +303,7 @@ const deleteProduk = async(req, res) => {
 
 module.exports = {
     getAllProduk,
-    getAllProdukFalse,
+    isPublishFalse,
     createProduk,
     updateProduk,
     deleteProduk,
