@@ -18,7 +18,7 @@ const { Transaksi, Produk, User } = require(`../models`);
 //             status: "Success",
 //             data: findTransaction
 //         })
-        
+
 //     } catch (error){
 //         return res.status(400).json({
 //             status: "Failed",
@@ -35,18 +35,18 @@ const getNotificationById = async (req, res) => {
             include: [{
                 model: Produk,
                 attributes: ['namaProduk', 'gambar', 'harga']
-            },{
+            }, {
                 model: User,
                 attributes: ['foto', 'nama']
             }],
             where: [{
                 statusTransaksi
-            },{
+            }, {
                 sellerId
             }]
         }
         const cariHistory = await Transaksi.findAll(options);
-        if (cariHistory.length === 0){
+        if (cariHistory.length === 0) {
             return res.status(400).json({
                 status: 'Error',
                 message: 'Tidak ada notifikasi'
@@ -67,7 +67,7 @@ const getNotificationById = async (req, res) => {
 
 const getNotificationByIdBuyer = async (req, res) => {
     try {
-        const sellerId = req.user.id
+        const buyerId = req.user.id
         const statusTransaksi = 'accepted'
         const options = {
             include: [{
@@ -80,7 +80,7 @@ const getNotificationByIdBuyer = async (req, res) => {
             where: [{
                 statusTransaksi
             }, {
-                sellerId
+                buyerId
             }]
         }
         const cariHistory = await Transaksi.findAll(options);
