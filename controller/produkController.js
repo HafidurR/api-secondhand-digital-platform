@@ -18,6 +18,7 @@ const getAllProduk = async (req, res) => {
                 isPublish
             }
         };
+        
         if (page) options.offset = page;
         if (row) options.limit = row;
         if (namaProduk) options.where.namaProduk = {
