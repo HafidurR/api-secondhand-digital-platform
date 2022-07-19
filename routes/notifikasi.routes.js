@@ -4,5 +4,6 @@ const userChecking = require('../misc/passport')
 
 // router.get('/', userChecking, notifikasiRoute.getAllNotification);
 router.get('/', userChecking, notifikasiRoute.getNotificationById)
+router.get('/buyer', userChecking, notifikasiRoute.getNotificationByIdBuyer)
 
 module.exports = router;
