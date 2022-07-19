@@ -66,9 +66,9 @@ const getAllProdukSeller = async (req, res) => {
         if (kategoriId) options.where.kategoriId = kategoriId
         const allProduk = await Produk.findAll(options);
         if (allProduk.length === 0) {
-            return res.status(400).json({
-                status: 'Error',
-                data: 'Pencarian tidak ditemukan'
+            return res.status(200).json({
+                status: 'Success',
+                data: 'Tidak ada produk'
             })
         } else if (allProduk) {
             return res.status(200).json({
