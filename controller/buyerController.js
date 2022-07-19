@@ -43,8 +43,12 @@ const createBuyerTransaction = async (req, res) => {
             }
         })
         if(jwt_payload.id === findProduct.userId) throw new Error ("Transaction cannot be done ")
-        // return console.log(findProduct);
-        if(findTransaction === null || findTransaction) {
+        if (findTransaction.buyerId === findTransaction.statusTransaksi === 'pending' || 'accepted') {
+            res.status(400).json({
+                status: 'Error',
+                message: 'Barang sudah ditawar.'
+            })
+        } else if(findTransaction === null || findTransaction) {
             const transactionData = {
                 buyerId: jwt_payload.id,
                 sellerId: findProduct.userId,
@@ -107,7 +111,7 @@ const updateBuyerTransaction = async (req, res) => {
         }
         const findTransaction = await Transaksi.findOne(options)
         if(!findTransaction) throw new Error ("Transaksi tidak ditemukan")
-        if (findTransaction.statusTransaksi === 'accepted') {
+        if (findTransaction.statusTransaksi === 'finished') {
             return res.status(400).json({
                 status: 'Error',
                 message: 'Transaksi sudah selesai'
