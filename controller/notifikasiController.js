@@ -1,4 +1,5 @@
 const { Transaksi, Produk, User } = require(`../models`);
+const moment = require('moment')
 
 const getNotificationByIdBuyer = async (req, res) => {
     try {
@@ -8,7 +9,7 @@ const getNotificationByIdBuyer = async (req, res) => {
         const options = {
             include: [{
                 model: Produk,
-                attributes: ['namaProduk', 'gambar', 'harga']
+                attributes: ['namaProduk', 'gambar', 'harga', 'createdAt']
             }, {
                 model: User,
                 attributes: ['foto', 'nama']
