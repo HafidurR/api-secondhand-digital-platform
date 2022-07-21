@@ -8,6 +8,8 @@ cloudinary.config({
 
 const uploadWithCloudinary = async (req, res, next) => {
     try {
+        if(req.file === undefined) return next()
+        // console.log(`Msuk cloudDinary`)
         const foldering = `my-asset/${req.file.mimetype.split('/')[0]}`;
         const uploadResult = await cloudinary.uploader.upload(req.file.path, {
         folder: foldering

@@ -16,10 +16,14 @@
     "heroku": "^7.60.2",
     "jwt-decode": "^3.1.2",
     "moment": "^2.29.4",
+<<<<<<< HEAD
+=======
+    "moment-timezone": "^0.5.34",
+>>>>>>> 5274a1a461dc3c9cb0689a294e6f3f306de4fccd
     "morgan": "^1.9.1",
     "multer": "^1.4.5-lts.1",
     "nodemailer": "^6.7.5",
-    "nodemon": "^2.0.15",
+    "nodemon": "^2.0.19",
     "op": "^0.0.6",
     "passport": "^0.6.0",
     "passport-jwt": "^4.0.0",

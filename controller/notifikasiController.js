@@ -2,6 +2,7 @@ const { Transaksi, Produk, User } = require(`../models`);
 const moment = require('moment');
 moment.locale('id');
 
+
 const getNotificationByIdBuyer = async (req, res) => {
     try {
         const sellerId = req.user.id
@@ -11,7 +12,7 @@ const getNotificationByIdBuyer = async (req, res) => {
             attributes: ['id', 'sellerId', 'buyerId', 'produkId', 'statusTransaksi', 'hargaJual', 'createdAt'],
             include: [{
                 model: Produk,
-                attributes: ['namaProduk', 'gambar', 'harga']
+                attributes: ['namaProduk', 'gambar', 'harga', 'createdAt']
             }, {
                 model: User,
                 attributes: ['foto', 'nama']

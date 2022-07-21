@@ -172,10 +172,11 @@ const updateUser = async (req, res) => {
         const id = req.params.id;
         const { nama, alamat, kotaId, noTelp, foto_url } = req.body;
         // const hash = await bcrypt.hash(password, 12);
-        const updatedData = {
-            nama, alamat, kotaId, noTelp, foto: foto_url
+        let updatedData = {
+            nama, alamat, kotaId, noTelp
         }
-
+        if(foto_url) updatedData.foto = foto_url
+        console.log(updatedData)
         await User.findOne({
             where: {
                 id: id

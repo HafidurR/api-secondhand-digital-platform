@@ -43,9 +43,11 @@ const createBuyerTransaction = async (req, res) => {
             }
         })
 
+
         if (jwt_payload.id === findProduct.userId) throw new Error("Transaction cannot be done ") //Cannot buy own user product
 
         if (findTransaction === null) {
+
             const transactionData = {
                 buyerId: jwt_payload.id,
                 sellerId: findProduct.userId,
@@ -59,7 +61,9 @@ const createBuyerTransaction = async (req, res) => {
                 status: "Success",
                 message: "Sukses membuat transaksi"
             })
+
         } else if (findTransaction.statusTransaksi === 'pending' || 'accepted') {
+
             res.status(400).json({
                 status: 'Error',
                 message: 'Barang sudah ditawar.'
