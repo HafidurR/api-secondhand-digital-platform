@@ -1,4 +1,6 @@
 const { Transaksi, Produk, User } = require(`../models`);
+const moment = require('moment');
+moment.locale('id');
 
 const getNotificationByIdBuyer = async (req, res) => {
     try {
@@ -6,6 +8,7 @@ const getNotificationByIdBuyer = async (req, res) => {
 
         const statusTransaksi = 'pending'
         const options = {
+            attributes: ['id', 'sellerId', 'buyerId', 'produkId', 'statusTransaksi', 'hargaJual', 'createdAt'],
             include: [{
                 model: Produk,
                 attributes: ['namaProduk', 'gambar', 'harga']
@@ -28,7 +31,19 @@ const getNotificationByIdBuyer = async (req, res) => {
         } else if (cariHistory) {
             return res.status(200).json({
                 status: 'Success',
-                data: cariHistory
+                data: cariHistory.length === 0 ? null : cariHistory.map(d => {
+                    return {
+                        id: d.id,
+                        sellerId: d.sellerId,
+                        buyerId: d.buyerId,
+                        produkId: d.produkId,
+                        template: d.template,
+                        statusTransaksi: d.statusTransaksi,
+                        createdAt: moment(d.createdAt).format('LL'),
+                        Produk: d.Produk,
+                        User: d.User
+                    }
+                })
             })
         }
     } catch (error) {
@@ -42,9 +57,10 @@ const getNotificationByIdBuyer = async (req, res) => {
 const getNotificationById = async (req, res) => {
     try {
         const sellerId = req.user.id
-        
+
         const statusTransaksi = 'pending'
         const options = {
+            attributes: ['id', 'sellerId', 'buyerId', 'produkId', 'statusTransaksi', 'hargaJual', 'createdAt'],
             include: [{
                 model: Produk,
                 attributes: ['namaProduk', 'gambar', 'harga']
@@ -67,7 +83,19 @@ const getNotificationById = async (req, res) => {
         } else if (cariHistory) {
             return res.status(200).json({
                 status: 'Success',
-                data: cariHistory
+                data: cariHistory.length === 0 ? null : cariHistory.map(d => {
+                    return {
+                        id: d.id,
+                        sellerId: d.sellerId,
+                        buyerId: d.buyerId,
+                        produkId: d.produkId,
+                        template: d.template,
+                        statusTransaksi: d.statusTransaksi,
+                        createdAt: moment(d.createdAt).format('LL'),
+                        Produk: d.Produk,
+                        User: d.User
+                    }
+                })
             })
         }
     } catch (error) {
@@ -83,6 +111,7 @@ const getNotificationBuyer = async (req, res) => {
         const buyerId = req.user.id
         const statusTransaksi = 'accepted'
         const options = {
+            attributes: ['id', 'sellerId', 'buyerId', 'produkId', 'statusTransaksi', 'hargaJual', 'createdAt'],
             include: [{
                 model: Produk,
                 attributes: ['namaProduk', 'gambar', 'harga']
@@ -105,7 +134,19 @@ const getNotificationBuyer = async (req, res) => {
         } else if (cariHistory) {
             return res.status(200).json({
                 status: 'Success',
-                data: cariHistory
+                data: cariHistory.length === 0 ? null : cariHistory.map(d => {
+                    return {
+                        id: d.id,
+                        sellerId: d.sellerId,
+                        buyerId: d.buyerId,
+                        produkId: d.produkId,
+                        template: d.template,
+                        statusTransaksi: d.statusTransaksi,
+                        createdAt: moment(d.createdAt).format('LL'),
+                        Produk: d.Produk,
+                        User: d.User
+                    }
+                })
             })
         }
     } catch (error) {

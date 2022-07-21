@@ -28,12 +28,12 @@ const getAllBuyerTransaction = async (req, res) => {
 
 const createBuyerTransaction = async (req, res) => {
     try {
-        const { produkId, hargaTawar } = req.body 
+        const { produkId, hargaTawar } = req.body
         const jwt_payload = req.user // catch token from passport.js middleware
         const findTransaction = await Transaksi.findOne({
             where: [{
                 buyerId: jwt_payload.id
-            },{
+            }, {
                 produkId: produkId
             }]
         });
@@ -42,13 +42,10 @@ const createBuyerTransaction = async (req, res) => {
                 id: produkId
             }
         })
-        if(jwt_payload.id === findProduct.userId) throw new Error ("Transaction cannot be done ")
-        if (findTransaction.buyerId === findTransaction.statusTransaksi === 'pending' || 'accepted') {
-            res.status(400).json({
-                status: 'Error',
-                message: 'Barang sudah ditawar.'
-            })
-        } else if(findTransaction === null || findTransaction) {
+
+        if (jwt_payload.id === findProduct.userId) throw new Error("Transaction cannot be done ") //Cannot buy own user product
+
+        if (findTransaction === null) {
             const transactionData = {
                 buyerId: jwt_payload.id,
                 sellerId: findProduct.userId,
@@ -61,6 +58,11 @@ const createBuyerTransaction = async (req, res) => {
             return res.status(201).json({
                 status: "Success",
                 message: "Sukses membuat transaksi"
+            })
+        } else if (findTransaction.statusTransaksi === 'pending' || 'accepted') {
+            res.status(400).json({
+                status: 'Error',
+                message: 'Barang sudah ditawar.'
             })
         }
     } catch (error) {

@@ -26,14 +26,11 @@ module.exports = {
       },
       produkId: {
         type: Sequelize.INTEGER,
-        allowNull: false,
-        references: {         // User belongsTo Produk 1:1
-          model: 'Produks',
-          key: 'id'
-        }
+        allowNull: false
       },
       statusTransaksi: {
-        type: Sequelize.STRING
+        type: Sequelize.ENUM,
+        values: ['pending', 'accepted', 'finished', 'canceled']
       },
       hargaJual: {
         type: Sequelize.STRING

@@ -12,7 +12,9 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       Transaksi.belongsTo(models.Produk, {
-        foreignKey: `produkId`
+        foreignKey: `produkId`,
+        onUpdate: 'cascade',
+        onDelete: 'cascade'
       })
       Transaksi.belongsTo(models.User, {
         foreignKey: `sellerId`
@@ -26,7 +28,10 @@ module.exports = (sequelize, DataTypes) => {
     sellerId: DataTypes.INTEGER,
     buyerId: DataTypes.INTEGER,
     produkId: DataTypes.INTEGER,
-    statusTransaksi: DataTypes.STRING,
+    statusTransaksi: {
+      type: DataTypes.ENUM,
+      values: ['pending', 'accepted', 'finished', 'canceled']
+    },
     hargaJual: DataTypes.STRING
   }, {
     sequelize,
