@@ -2,7 +2,6 @@ const { Transaksi, Produk, User } = require(`../models`);
 const moment = require('moment');
 moment.locale('id');
 
-
 const getNotificationByIdBuyer = async (req, res) => {
     try {
         const sellerId = req.user.id
