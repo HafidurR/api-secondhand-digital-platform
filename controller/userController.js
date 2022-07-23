@@ -179,7 +179,7 @@ const updateUser = async (req, res) => {
         console.log(updatedData)
         await User.findOne({
             where: {
-                id: jwt_payload.id
+                id: id
             }
         })
             .then(async (rsl) => {
@@ -191,7 +191,7 @@ const updateUser = async (req, res) => {
                 } else {
                     await User.update(updatedData, {
                         where: {
-                            id: jwt_payload.id
+                            id: id
                         }
                     })
                         .then(() => {
