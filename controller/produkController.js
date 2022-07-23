@@ -334,7 +334,11 @@ const deleteProduk = async(req, res) => {
         })
     }
     if (cariProduk) {
-        const hapusProduk = await Produk.destroy()
+        const hapusProduk = await Produk.destroy({
+            where: {
+                id: id
+            }
+        })
         return res.status(200).json({
             status: 'Success',
             message: `Produk dengan id ${req.params.id} berhasil dihapus`
