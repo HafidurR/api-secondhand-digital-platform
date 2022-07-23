@@ -1,6 +1,7 @@
 const { Produk, User } = require('../models');
 const model = require('../models');
 const { Op } = require("sequelize");
+
 const cloudinary = require('../misc/cloudinaryProduk')
 
 const getAllProduk = async (req, res) => {
