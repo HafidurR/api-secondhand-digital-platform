@@ -171,7 +171,7 @@ const updateUser = async (req, res) => {
     try {
         const id = req.params.id;
         const { nama, alamat, kotaId, noTelp, foto_url } = req.body;
-        // const hash = await bcrypt.hash(password, 12);
+        const jwt_payload = req.user
         let updatedData = {
             nama, alamat, kotaId, noTelp
         }
@@ -179,7 +179,7 @@ const updateUser = async (req, res) => {
         console.log(updatedData)
         await User.findOne({
             where: {
-                id: id
+                id: jwt_payload.id
             }
         })
             .then(async (rsl) => {
@@ -191,7 +191,7 @@ const updateUser = async (req, res) => {
                 } else {
                     await User.update(updatedData, {
                         where: {
-                            id: id
+                            id: jwt_payload.id
                         }
                     })
                         .then(() => {

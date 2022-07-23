@@ -1,4 +1,4 @@
-const {Produk} = require('../models');
+const { Produk, User } = require('../models');
 const model = require('../models');
 const { Op } = require("sequelize");
 const cloudinary = require('../misc/cloudinaryProduk')
@@ -114,7 +114,8 @@ const createProduk = async (req, res) => {
         const uploader = async (path) => await cloudinary.uploads(path, 'Gambar')
         const { namaProduk, harga, deskripsi, kategoriId } = req.body
         const jwt_payload = req.user
-        if(jwt_payload.profile !== 0) {
+        const checkProfile = await User.findByPk(jwt_payload.id)
+        if(checkProfile.kota === null || checkProfile.alamat === null || checkProfile.noTelp === null) {
             return res.status(400).json({
                 status: 'Error',
                 message: 'Lengkapi profile terlebih dahulu'

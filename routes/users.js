@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const userChecking = require('../misc/passport');
 const multer = require('multer');
 const userRoute = require('../controller/userController');
 const uploadWithCloudinary = require('../misc/cloudinary')
@@ -26,6 +27,6 @@ router.post('/register', userRoute.register)
 router.post('/login', userRoute.login)
 router.get('/', userRoute.getAll)
 router.get('/:id', userRoute.getDetailUser)
-router.put('/:id', upload.single('foto'), uploadWithCloudinary, userRoute.updateUser)
+router.put('/:id', userChecking, upload.single('foto'), uploadWithCloudinary, userRoute.updateUser)
 
 module.exports = router;
