@@ -169,9 +169,8 @@ const getDetailUser = async (req, res) => {
 
 const updateUser = async (req, res) => {
     try {
-        const id = req.params.id;
         const { nama, alamat, kotaId, noTelp, foto_url } = req.body;
-        const jwt_payload = req.user
+        const jwt_payload = req.user.id
         let updatedData = {
             nama, alamat, kotaId, noTelp
         }
@@ -179,7 +178,7 @@ const updateUser = async (req, res) => {
         console.log(updatedData)
         await User.findOne({
             where: {
-                id: jwt_payload.id
+                id: jwt_payload
             }
         })
             .then(async (rsl) => {
@@ -191,7 +190,7 @@ const updateUser = async (req, res) => {
                 } else {
                     await User.update(updatedData, {
                         where: {
-                            id: jwt_payload.id
+                            id: jwt_payload
                         }
                     })
                         .then(() => {

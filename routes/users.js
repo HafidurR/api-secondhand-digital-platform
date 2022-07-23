@@ -5,9 +5,9 @@ const multer = require('multer');
 const userRoute = require('../controller/userController');
 const uploadWithCloudinary = require('../misc/cloudinary')
 const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, './public/images');
-  },
+  // destination: (req, file, cb) => {
+  //   cb(null, './public/images');
+  // },
   filename: (req, file, cb) => {
     const index = file.originalname.split('.').length;
     cb(null, Date.now() + '.' + file.originalname.split('.')[index - 1]);
@@ -27,6 +27,6 @@ router.post('/register', userRoute.register)
 router.post('/login', userRoute.login)
 router.get('/', userRoute.getAll)
 router.get('/:id', userRoute.getDetailUser)
-router.put('/', userChecking, uploadWithCloudinary, userRoute.updateUser)
+router.put('/', userChecking, upload.single('foto'), uploadWithCloudinary, userRoute.updateUser)
 
 module.exports = router;
